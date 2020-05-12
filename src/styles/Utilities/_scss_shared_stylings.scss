@@ -1,0 +1,53 @@
+/* Shared styles for webpages */
+
+// Importing Utilities
+@import "scss_vars";
+@import "scss_funcs";
+@import "CustomFonts";
+
+// Properties for body
+html,
+body,
+#root {
+  scroll-behavior: smooth;
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: get($colors, light);
+  overflow-x: hidden;
+}
+
+// Properties for elements in body
+body > * {
+  font-family: get($fonts, content);
+  color: get($colors, dark);
+}
+
+// Properties for links
+a {
+  text-decoration: none;
+}
+
+// Properties for buttons
+button {
+  font-family: get($fonts, content);
+  color: get($colors, lighter-dark);
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+// Removing unwanted outlines
+button:focus,
+a:focus,
+input:focus {
+  outline: none;
+}
+
+// Properties for clickables
+button,
+a,
+input[type="submit"] {
+  cursor: pointer;
+}

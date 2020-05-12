@@ -1,0 +1,24 @@
+/* Variables for other scss files */
+
+// Importing Utilities
+@import "scss_funcs";
+@import "CustomFonts";
+
+// Breakpoints for page designs
+$breakPoints: (
+  small: 540px,
+  mid: 830px
+);
+
+// Color plalette
+$colors: (
+  red-col: #e03c3c,
+  blue-col: #217fff,
+  dark-blue: #003d90,
+  light: rgb(255, 255, 255)
+);
+
+// Website fonts
+$fonts: (
+  content: "Helvetica Neue"
+);

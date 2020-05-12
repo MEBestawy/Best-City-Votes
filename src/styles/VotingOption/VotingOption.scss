@@ -1,0 +1,28 @@
+@import "../Utilities/Utilities";
+
+.container {
+  display: flex;
+  padding-bottom: 5px;
+  border-bottom: 2px solid get($colors, red-col);
+  cursor: pointer;
+}
+
+.container > * {
+  align-self: center;
+}
+
+.background-pic {
+  width: 40px;
+  height: 40px;
+  border: 3px solid;
+  border-radius: 100%;
+  border-color: get($colors, red-col);
+  background-color: lightpink;
+}
+
+.vote-opt-name {
+  font-size: 1.9em;
+  margin-top: 5px;
+  color: get($colors, blue-col);
+  margin-left: 10px;
+}

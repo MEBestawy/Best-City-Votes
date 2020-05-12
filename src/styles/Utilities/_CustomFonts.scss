@@ -1,0 +1,15 @@
+/* Custom fonts for webpages */
+
+// Helvetica Neue font
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/Fonts/HelveticaNeue/HelveticaNeue.eot");
+  src: url("/Fonts/HelveticaNeue/HelveticaNeue.eot?#iefix")
+      format("embedded-opentype"),
+    url("/Fonts/HelveticaNeue/HelveticaNeue.woff2") format("woff2"),
+    url("/Fonts/HelveticaNeue/HelveticaNeue.woff") format("woff"),
+    url("/Fonts/HelveticaNeue/HelveticaNeue.ttf") format("truetype"),
+    url("/Fonts/HelveticaNeue/HelveticaNeue.svg#HelveticaNeue") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}

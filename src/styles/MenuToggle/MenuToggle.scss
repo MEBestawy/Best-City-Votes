@@ -1,0 +1,26 @@
+@import "../Utilities/Utilities";
+
+#toggle-menu-background {
+  margin-right: 20px;
+  margin-top: 15px;
+  position: fixed;
+  right: 0;
+  padding: 0;
+  width: fit-content;
+  z-index: 10;
+  user-select: none;
+  cursor: pointer;
+}
+
+.line {
+  transition: all 0.15s ease-in;
+  border-radius: 5px;
+  margin-top: 7px;
+  height: 4px;
+  width: 32px;
+  background-color: get($colors, red-col);
+}
+
+.top-line-of-toggle-menu {
+  margin: 0;
+}
