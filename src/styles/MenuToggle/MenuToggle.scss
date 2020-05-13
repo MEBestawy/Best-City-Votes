@@ -21,6 +21,18 @@
   background-color: get($colors, red-col);
 }
 
+.opened-menu {
+  .top-line-of-toggle-menu {
+    transform: translate(0px, 11px) rotate(-45deg);
+  }
+  .mid-line-of-toggle-menu {
+    opacity: 0;
+  }
+  .bottom-line-of-toggle-menu {
+    transform: translate(0px, -11px) rotate(45deg);
+  }
+}
+
 // Bigger than mid screen
 @media screen and (min-width: get($breakPoints, mid)) {
   #toggle-menu-background {
@@ -33,6 +45,18 @@
     margin-top: 9px;
     height: 5px;
     width: 45px;
+  }
+
+  .opened-menu {
+    .top-line-of-toggle-menu {
+      transform: translate(0px, 14px) rotate(-45deg);
+    }
+    .mid-line-of-toggle-menu {
+      opacity: 0;
+    }
+    .bottom-line-of-toggle-menu {
+      transform: translate(0px, -14px) rotate(45deg);
+    }
   }
 }
 

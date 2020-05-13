@@ -12,7 +12,9 @@ const VotingOption = props => {
         props.onPick(props.option.id);
       }}
     >
-      <div className="background-pic"></div>
+      <div className="pic-background">
+        <img className="pic" src={props.option.img} alt="" />
+      </div>
       <div className="vote-opt-name">{props.option.name}</div>
     </div>
   );

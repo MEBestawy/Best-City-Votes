@@ -9,12 +9,26 @@ class App extends React.Component {
     menuOpened: false
   };
 
+  handleMenuTogglePress = () => {
+    this.setState({ menuOpened: !this.state.menuOpened });
+  };
+
+  handleBodySectionPress = () => {
+    this.setState({ menuOpened: false });
+  };
+
   render() {
     return (
       <React.Fragment>
-        <SideDrawer />
-        <MenuToggle />
-        <BodySection />
+        <SideDrawer opened={this.state.menuOpened} />
+        <MenuToggle
+          opened={this.state.menuOpened}
+          onPress={this.handleMenuTogglePress}
+        />
+        <BodySection
+          onPress={this.handleBodySectionPress}
+          menuOppened={this.state.menuOpened}
+        />
       </React.Fragment>
     );
   }

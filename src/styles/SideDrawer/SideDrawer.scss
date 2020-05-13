@@ -1,0 +1,27 @@
+@import "../Utilities/Utilities";
+
+.drawer-container {
+  z-index: 8;
+  transition: 0.8s;
+  position: fixed;
+  background: get($colors, light);
+  right: 0;
+  width: 60%;
+  max-width: 550px;
+  height: 100%;
+  transform: translateX(100%);
+  border-left: 4px solid get($colors, blue-col);
+  box-sizing: border-box;
+}
+
+.opened {
+  transform: translateX(0%);
+  display: initial;
+}
+
+// Smaller than small screen
+@media screen and (max-width: get($breakPoints, small)) {
+  .drawer-container {
+    width: 80%;
+  }
+}

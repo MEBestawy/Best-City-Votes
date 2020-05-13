@@ -1,1 +1,76 @@
-/* No CSS *//*# sourceMappingURL=SideDrawer.css.map */
+/* File for importing all available scss imports */
+/* Variables for other scss files */
+/* Shared functions for scss files */
+/* Shared functions for scss files */
+/* Shared styles for webpages */
+/* Variables for other scss files */
+/* Shared functions for scss files */
+/* Shared functions for scss files */
+html,
+body,
+#root {
+  scroll-behavior: smooth;
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: white;
+  overflow-x: hidden;
+}
+
+body > * {
+  font-family: "Helvetica Neue";
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font-family: "Helvetica Neue";
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+button:focus,
+a:focus,
+input:focus {
+  outline: none;
+}
+
+button,
+a,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+.drawer-container {
+  z-index: 8;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  position: fixed;
+  background: white;
+  right: 0;
+  width: 60%;
+  max-width: 550px;
+  height: 100%;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  border-left: 4px solid #217fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.opened {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  display: initial;
+}
+
+@media screen and (max-width: 540px) {
+  .drawer-container {
+    width: 80%;
+  }
+}
+/*# sourceMappingURL=SideDrawer.css.map */

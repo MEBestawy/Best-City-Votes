@@ -1,83 +1,11 @@
 /* File for importing all available scss imports */
 /* Variables for other scss files */
 /* Shared functions for scss files */
-/* Custom fonts for webpages */
-@font-face {
-  font-family: "Helvetica Neue";
-  src: url("/Fonts/HelveticaNeue/HelveticaNeue.eot");
-  src: url("/Fonts/HelveticaNeue/HelveticaNeue.eot?#iefix") format("embedded-opentype"), url("/Fonts/HelveticaNeue/HelveticaNeue.woff2") format("woff2"), url("/Fonts/HelveticaNeue/HelveticaNeue.woff") format("woff"), url("/Fonts/HelveticaNeue/HelveticaNeue.ttf") format("truetype"), url("/Fonts/HelveticaNeue/HelveticaNeue.svg#HelveticaNeue") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* Custom fonts for webpages */
-@font-face {
-  font-family: "Helvetica Neue";
-  src: url("/Fonts/HelveticaNeue/HelveticaNeue.eot");
-  src: url("/Fonts/HelveticaNeue/HelveticaNeue.eot?#iefix") format("embedded-opentype"), url("/Fonts/HelveticaNeue/HelveticaNeue.woff2") format("woff2"), url("/Fonts/HelveticaNeue/HelveticaNeue.woff") format("woff"), url("/Fonts/HelveticaNeue/HelveticaNeue.ttf") format("truetype"), url("/Fonts/HelveticaNeue/HelveticaNeue.svg#HelveticaNeue") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
 /* Shared functions for scss files */
-/* Custom fonts for webpages */
-@font-face {
-  font-family: "Helvetica Neue";
-  src: url("/Fonts/HelveticaNeue/HelveticaNeue.eot");
-  src: url("/Fonts/HelveticaNeue/HelveticaNeue.eot?#iefix") format("embedded-opentype"), url("/Fonts/HelveticaNeue/HelveticaNeue.woff2") format("woff2"), url("/Fonts/HelveticaNeue/HelveticaNeue.woff") format("woff"), url("/Fonts/HelveticaNeue/HelveticaNeue.ttf") format("truetype"), url("/Fonts/HelveticaNeue/HelveticaNeue.svg#HelveticaNeue") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* Custom fonts for webpages */
-@font-face {
-  font-family: "Helvetica Neue";
-  src: url("/Fonts/HelveticaNeue/HelveticaNeue.eot");
-  src: url("/Fonts/HelveticaNeue/HelveticaNeue.eot?#iefix") format("embedded-opentype"), url("/Fonts/HelveticaNeue/HelveticaNeue.woff2") format("woff2"), url("/Fonts/HelveticaNeue/HelveticaNeue.woff") format("woff"), url("/Fonts/HelveticaNeue/HelveticaNeue.ttf") format("truetype"), url("/Fonts/HelveticaNeue/HelveticaNeue.svg#HelveticaNeue") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
 /* Shared styles for webpages */
 /* Variables for other scss files */
 /* Shared functions for scss files */
-/* Custom fonts for webpages */
-@font-face {
-  font-family: "Helvetica Neue";
-  src: url("/Fonts/HelveticaNeue/HelveticaNeue.eot");
-  src: url("/Fonts/HelveticaNeue/HelveticaNeue.eot?#iefix") format("embedded-opentype"), url("/Fonts/HelveticaNeue/HelveticaNeue.woff2") format("woff2"), url("/Fonts/HelveticaNeue/HelveticaNeue.woff") format("woff"), url("/Fonts/HelveticaNeue/HelveticaNeue.ttf") format("truetype"), url("/Fonts/HelveticaNeue/HelveticaNeue.svg#HelveticaNeue") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* Custom fonts for webpages */
-@font-face {
-  font-family: "Helvetica Neue";
-  src: url("/Fonts/HelveticaNeue/HelveticaNeue.eot");
-  src: url("/Fonts/HelveticaNeue/HelveticaNeue.eot?#iefix") format("embedded-opentype"), url("/Fonts/HelveticaNeue/HelveticaNeue.woff2") format("woff2"), url("/Fonts/HelveticaNeue/HelveticaNeue.woff") format("woff"), url("/Fonts/HelveticaNeue/HelveticaNeue.ttf") format("truetype"), url("/Fonts/HelveticaNeue/HelveticaNeue.svg#HelveticaNeue") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
 /* Shared functions for scss files */
-/* Custom fonts for webpages */
-@font-face {
-  font-family: "Helvetica Neue";
-  src: url("/Fonts/HelveticaNeue/HelveticaNeue.eot");
-  src: url("/Fonts/HelveticaNeue/HelveticaNeue.eot?#iefix") format("embedded-opentype"), url("/Fonts/HelveticaNeue/HelveticaNeue.woff2") format("woff2"), url("/Fonts/HelveticaNeue/HelveticaNeue.woff") format("woff"), url("/Fonts/HelveticaNeue/HelveticaNeue.ttf") format("truetype"), url("/Fonts/HelveticaNeue/HelveticaNeue.svg#HelveticaNeue") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* Custom fonts for webpages */
-@font-face {
-  font-family: "Helvetica Neue";
-  src: url("/Fonts/HelveticaNeue/HelveticaNeue.eot");
-  src: url("/Fonts/HelveticaNeue/HelveticaNeue.eot?#iefix") format("embedded-opentype"), url("/Fonts/HelveticaNeue/HelveticaNeue.woff2") format("woff2"), url("/Fonts/HelveticaNeue/HelveticaNeue.woff") format("woff"), url("/Fonts/HelveticaNeue/HelveticaNeue.ttf") format("truetype"), url("/Fonts/HelveticaNeue/HelveticaNeue.svg#HelveticaNeue") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
 html,
 body,
 #root {
