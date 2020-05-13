@@ -144,6 +144,19 @@ input[type="submit"] {
   background-color: #e03c3c;
 }
 
+@media screen and (min-width: 830px) {
+  #toggle-menu-background {
+    margin-right: 30px;
+    margin-top: 25px;
+  }
+  .line {
+    border-radius: 90px;
+    margin-top: 9px;
+    height: 5px;
+    width: 45px;
+  }
+}
+
 .top-line-of-toggle-menu {
   margin: 0;
 }

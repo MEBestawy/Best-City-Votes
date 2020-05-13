@@ -12,6 +12,17 @@
   margin-top: 60px;
 }
 
+// Bigger than mid screen
+@media screen and (min-width: get($breakPoints, mid)) {
+  .options-container {
+    margin-top: 40px;
+  }
+
+  .options-container > * {
+    margin-top: 100px;
+  }
+}
+
 .first {
   margin: 0;
 }

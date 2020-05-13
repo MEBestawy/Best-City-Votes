@@ -122,7 +122,7 @@ input[type="submit"] {
   display: -ms-flexbox;
   display: flex;
   padding-bottom: 5px;
-  border-bottom: 2px solid #e03c3c;
+  border-bottom: 3px solid #e03c3c;
   cursor: pointer;
 }
 
@@ -146,5 +146,17 @@ input[type="submit"] {
   margin-top: 5px;
   color: #217fff;
   margin-left: 10px;
+}
+
+.chosen-opt {
+  border-bottom-color: #26b436;
+}
+
+.chosen-opt .background-pic {
+  border-color: #26b436;
+}
+
+.chosen-opt .vote-opt-name {
+  color: #26b436;
 }
 /*# sourceMappingURL=VotingOption.css.map */

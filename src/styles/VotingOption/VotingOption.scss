@@ -3,7 +3,7 @@
 .container {
   display: flex;
   padding-bottom: 5px;
-  border-bottom: 2px solid get($colors, red-col);
+  border-bottom: 3px solid get($colors, red-col);
   cursor: pointer;
 }
 
@@ -17,7 +17,7 @@
   border: 3px solid;
   border-radius: 100%;
   border-color: get($colors, red-col);
-  background-color: lightpink;
+  background-color: get($colors, pink-col);
 }
 
 .vote-opt-name {
@@ -25,4 +25,15 @@
   margin-top: 5px;
   color: get($colors, blue-col);
   margin-left: 10px;
+}
+
+.chosen-opt {
+  border-bottom-color: get($colors, green-col);
+  .background-pic {
+    border-color: get($colors, green-col);
+  }
+
+  .vote-opt-name {
+    color: get($colors, green-col);
+  }
 }

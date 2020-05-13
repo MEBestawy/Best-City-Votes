@@ -21,6 +21,21 @@
   background-color: get($colors, red-col);
 }
 
+// Bigger than mid screen
+@media screen and (min-width: get($breakPoints, mid)) {
+  #toggle-menu-background {
+    margin-right: 30px;
+    margin-top: 25px;
+  }
+
+  .line {
+    border-radius: 90px;
+    margin-top: 9px;
+    height: 5px;
+    width: 45px;
+  }
+}
+
 .top-line-of-toggle-menu {
   margin: 0;
 }

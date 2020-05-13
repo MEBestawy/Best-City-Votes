@@ -5,23 +5,28 @@ import "../styles/BodySection/BodySection.css";
 class BodySection extends React.Component {
   state = {
     voteOptions: [
-      { id: 0, name: "Dog" },
-      { id: 1, name: "Cat" },
-      { id: 2, name: "Fish" },
-      { id: 3, name: "Other" }
-    ],
-
-    chosen: -1
+      { id: 0, name: "Dog", chosen: false, src: "/public/images/dog.png" },
+      { id: 1, name: "Cat", chosen: false, src: "/public/images/dog.png" },
+      { id: 2, name: "Fish", chosen: false, src: "/public/images/dog.png" },
+      { id: 3, name: "Other", chosen: false, src: "/public/images/dog.png" }
+    ]
   };
 
   handlePickOption = id => {
-    const chosen = id;
+    const chosen = this.state.voteOptions;
+    chosen.forEach(option => {
+      option.chosen = false;
+    });
+    this.state.voteOptions.filter(opt => {
+      return opt.id === id;
+    })[0].chosen = true;
+
     this.setState({ chosen });
   };
 
   handleVote = () => {
     // Send id to server
-    console.log(this.state.chosen);
+    console.log(123);
   };
 
   render() {
@@ -34,9 +39,10 @@ class BodySection extends React.Component {
         <VotingOptions
           voteOptions={this.state.voteOptions}
           onPick={this.handlePickOption}
-          onVote={this.handleVote}
         />
-        <button id="petVote"> Vote </button>
+        <button id="petVote" onClick={this.handleVote}>
+          Vote
+        </button>
       </div>
     );
   }

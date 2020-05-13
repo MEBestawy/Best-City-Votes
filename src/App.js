@@ -12,8 +12,8 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <MenuToggle />
         <SideDrawer />
+        <MenuToggle />
         <BodySection />
       </React.Fragment>
     );

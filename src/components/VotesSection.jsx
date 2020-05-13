@@ -9,7 +9,8 @@ const VotesSection = props => {
         <VotingOption
           key={option.id}
           option={option}
-          className={option.id === 0 ? "first" : ""}
+          onPick={props.onPick}
+          className={option.id === 0 ? "first " : ""}
         />
       ))}
     </div>
