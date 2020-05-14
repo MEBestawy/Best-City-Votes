@@ -3,7 +3,8 @@
 .blur {
   transition: 1s ease;
   background-color: transparent;
-  filter: blur(5px) grayscale(20%);
+  filter: blur(5px) brightness(80%) grayscale(20%);
+  overflow: hidden;
 }
 .blur * {
   user-select: none;
@@ -27,7 +28,7 @@
   position: absolute;
   font-size: 1.2em;
   padding: 8px;
-  margin: 40px 0;
+  margin: 50px 0;
   left: 50%;
   width: 30%;
   min-width: 120px;
@@ -48,6 +49,8 @@
 // Bigger than mid screen
 @media screen and (min-width: get($breakPoints, mid)) {
   #petVote {
+    margin: 70px 0;
+    margin-bottom: 50px;
     font-size: 1.6em;
   }
 }

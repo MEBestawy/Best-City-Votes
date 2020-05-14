@@ -52,12 +52,14 @@ input[type="submit"] {
   position: fixed;
   background: white;
   right: 0;
-  width: 60%;
+  width: 70%;
   max-width: 550px;
   height: 100%;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
   border-left: 4px solid #217fff;
+  padding: 60px 30px;
+  overflow: scroll;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -68,9 +70,50 @@ input[type="submit"] {
   display: initial;
 }
 
+.menu-text > * {
+  color: #bd3333;
+  font-family: "Menlo";
+  font-size: 1.3em;
+  line-height: 1.3em;
+}
+
+.menu-promo-button {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin: 20px auto;
+  margin-bottom: 0;
+  font-size: 1.2em;
+  padding: 10px 25px;
+  background-color: white;
+  color: #217fff;
+  border: 2px solid #217fff;
+}
+
+.menu-promo-button:hover {
+  background-color: #217fff;
+  color: white;
+  border: 2px solid #217fff;
+  -webkit-box-shadow: 1px 1px 15px #217fff;
+          box-shadow: 1px 1px 15px #217fff;
+}
+
+@media screen and (max-width: 830px) {
+  .drawer-container {
+    padding: 35px 30px;
+  }
+  .menu-text > * {
+    font-size: 1.2em;
+    line-height: 1.2em;
+  }
+}
+
 @media screen and (max-width: 540px) {
   .drawer-container {
-    width: 80%;
+    width: 85%;
+    padding: 35px 20px;
+  }
+  .menu-text > * {
+    font-size: 1.1em;
   }
 }
 /*# sourceMappingURL=SideDrawer.css.map */

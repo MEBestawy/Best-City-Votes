@@ -12,16 +12,18 @@ $breakPoints: (
 // Color plalette
 $colors: (
   red-col: #e03c3c,
+  dark-red: #bd3333,
   blue-col: #217fff,
   dark-blue: #003d90,
   pink-col: #ffb6c1,
   green-col: #26b436,
-  trans-pink: rgba(255, 182, 193, 0.6),
-  trans-green: rgba(51, 227, 72, 0.6),
+  trans-pink: rgba(255, 182, 193, 0.2),
+  trans-green: rgba(51, 227, 72, 0.2),
   light: rgb(255, 255, 255)
 );
 
 // Website fonts
 $fonts: (
-  content: "Helvetica Neue"
+  content: "Helvetica Neue",
+  side-menu: "Menlo"
 );

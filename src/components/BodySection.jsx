@@ -1,10 +1,15 @@
 import React from "react";
 import VotingOptions from "./VotesSection";
 import "../styles/BodySection/BodySection.css";
-import Dog from "../images/face.png";
-import Cat from "../images/face.png";
-import Rock from "../images/face.png";
-import Other from "../images/face.png";
+import DogGreen from "../images/dog-green.png";
+import CatGreen from "../images/cat-green.png";
+import FishGreen from "../images/fish-green.png";
+import OtherGreen from "../images/other-green.png";
+
+import DogRed from "../images/dog-red.png";
+import CatRed from "../images/cat-red.png";
+import FishRed from "../images/fish-red.png";
+import OtherRed from "../images/other-red.png";
 
 class BodySection extends React.Component {
   state = {
@@ -13,21 +18,30 @@ class BodySection extends React.Component {
         id: 0,
         name: "Dog",
         chosen: false,
-        img: Dog
+        imgGreen: DogGreen,
+        imgRed: DogRed
       },
       {
         id: 1,
         name: "Cat",
         chosen: false,
-        img: Cat
+        imgGreen: CatGreen,
+        imgRed: CatRed
       },
       {
         id: 2,
-        name: "Pet rock",
+        name: "Fish",
         chosen: false,
-        img: Rock
+        imgGreen: FishGreen,
+        imgRed: FishRed
       },
-      { id: 3, name: "Other", chosen: false, img: Other }
+      {
+        id: 3,
+        name: "Other",
+        chosen: false,
+        imgGreen: OtherGreen,
+        imgRed: OtherRed
+      }
     ]
   };
 
@@ -48,9 +62,22 @@ class BodySection extends React.Component {
   };
 
   handleVote = () => {
+    const chosenOpt = [];
+    this.state.voteOptions.forEach(option => {
+      if (option.chosen) {
+        chosenOpt.push(option);
+      }
+    });
     if (this.props.menuOppened) {
       return;
+    } else if (chosenOpt.length !== 1) {
+      console.log(
+        "Error: More or less than one option is chosen. Chosen options:",
+        chosenOpt
+      );
+      return;
     }
+
     // Send id to server
     console.log(123);
   };

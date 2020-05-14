@@ -13,7 +13,13 @@ const VotingOption = props => {
       }}
     >
       <div className="pic-background">
-        <img className="pic" src={props.option.img} alt="" />
+        <img
+          className="pic"
+          src={
+            props.option.chosen ? props.option.imgGreen : props.option.imgRed
+          }
+          alt=""
+        />
       </div>
       <div className="vote-opt-name">{props.option.name}</div>
     </div>

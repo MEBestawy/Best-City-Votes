@@ -60,11 +60,18 @@ input[type="submit"] {
       align-self: center;
 }
 
+.container,
+.container > *,
+img {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
 .pic-background {
   width: 40px;
   height: 40px;
   border-radius: 100%;
-  background-color: rgba(255, 182, 193, 0.6);
+  background-color: rgba(255, 182, 193, 0.2);
 }
 
 .pic {
@@ -80,7 +87,7 @@ input[type="submit"] {
 .vote-opt-name {
   font-size: 1.9em;
   margin-top: 5px;
-  color: #217fff;
+  color: #e03c3c;
   margin-left: 10px;
 }
 
@@ -89,7 +96,7 @@ input[type="submit"] {
 }
 
 .chosen-opt .pic-background {
-  background-color: rgba(51, 227, 72, 0.6);
+  background-color: rgba(51, 227, 72, 0.2);
 }
 
 .chosen-opt .pic {

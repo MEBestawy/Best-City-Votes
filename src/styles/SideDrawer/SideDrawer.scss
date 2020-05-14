@@ -6,11 +6,13 @@
   position: fixed;
   background: get($colors, light);
   right: 0;
-  width: 60%;
+  width: 70%;
   max-width: 550px;
   height: 100%;
   transform: translateX(100%);
   border-left: 4px solid get($colors, blue-col);
+  padding: 60px 30px;
+  overflow: scroll;
   box-sizing: border-box;
 }
 
@@ -19,9 +21,50 @@
   display: initial;
 }
 
+.menu-text > * {
+  color: get($colors, dark-red);
+  font-family: get($fonts, side-menu);
+  font-size: 1.3em;
+  line-height: 1.3em;
+}
+
+.menu-promo-button {
+  transition: 0.3s;
+  margin: 20px auto;
+  margin-bottom: 0;
+  font-size: 1.2em;
+  padding: 10px 25px;
+  background-color: get($colors, light);
+  color: get($colors, blue-col);
+  border: 2px solid get($colors, blue-col);
+}
+.menu-promo-button:hover {
+  background-color: get($colors, blue-col);
+  color: get($colors, light);
+  border: 2px solid get($colors, blue-col);
+  box-shadow: 1px 1px 15px get($colors, blue-col);
+}
+
+// Smaller than mid screen
+@media screen and (max-width: get($breakPoints, mid)) {
+  .drawer-container {
+    padding: 35px 30px;
+  }
+
+  .menu-text > * {
+    font-size: 1.2em;
+
+    line-height: 1.2em;
+  }
+}
+
 // Smaller than small screen
 @media screen and (max-width: get($breakPoints, small)) {
   .drawer-container {
-    width: 80%;
+    width: 85%;
+    padding: 35px 20px;
+  }
+  .menu-text > * {
+    font-size: 1.1em;
   }
 }
