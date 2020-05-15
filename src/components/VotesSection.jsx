@@ -9,6 +9,7 @@ const VotesSection = props => {
         <VotingOption
           key={option.id}
           option={option}
+          maxVotes={props.maxVotes}
           onPick={props.onPick}
           className={option.id === 0 ? "first " : ""}
         />

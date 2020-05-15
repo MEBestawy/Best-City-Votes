@@ -16,8 +16,8 @@ const SideDrawer = props => {
           I started this project as an opportunity to gain experience and
           showcase my progress using web development tools such as React and
           SCSS. I also created this project with the hopes of experimenting with
-          backend development by adding server-side functionality through
-          keeping track of the amount of votes for each animal.
+          backend development by eventually adding server-side functionality
+          through keeping track of the amount of votes for each animal.
         </p>
         <p>
           Throughout this project I gained experience dealing with props, state

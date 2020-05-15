@@ -1,5 +1,8 @@
 @import "../Utilities/Utilities";
 
+.display-none {
+  display: none;
+}
 .container {
   display: flex;
   padding-bottom: 5px;
@@ -21,6 +24,8 @@ img {
   width: 40px;
   height: 40px;
   border-radius: 100%;
+  position: relative;
+  z-index: 10;
   background-color: get($colors, trans-pink);
 }
 
@@ -33,9 +38,28 @@ img {
   box-sizing: border-box;
 }
 
+.votes-bar-counter {
+  transition: 1s;
+  position: relative;
+  border-radius: 0 50px 50px 0;
+  color: get($colors, light);
+  font-size: 1.2em;
+  box-sizing: border-box;
+  background-color: get($colors, red-col);
+}
+.votes-bar-counter.show {
+  height: 40px;
+  margin-left: -20px;
+  text-align: right;
+  padding: 7px;
+  padding-right: 15px;
+}
+
 .vote-opt-name {
   font-size: 1.9em;
   margin-top: 5px;
+  position: relative;
+  z-index: 2;
   color: get($colors, red-col);
   margin-left: 10px;
 }
@@ -44,6 +68,9 @@ img {
   border-bottom-color: get($colors, green-col);
   .pic-background {
     background-color: get($colors, trans-green);
+  }
+  .votes-bar-counter {
+    background-color: get($colors, green-col);
   }
   .pic {
     border-color: get($colors, green-col);
@@ -58,6 +85,14 @@ img {
   .pic-background {
     width: 60px;
     height: 60px;
+  }
+
+  .votes-bar-counter.show {
+    height: 60px;
+    font-size: 1.5em;
+    padding: 12px;
+    padding-right: 25px;
+    margin-left: -30px;
   }
 
   .vote-opt-name {
