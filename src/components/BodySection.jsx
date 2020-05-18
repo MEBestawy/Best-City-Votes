@@ -14,7 +14,6 @@ class BodySection extends React.Component {
   state = {
     voteOptions: [
       {
-        id: 0,
         width: 0,
         votes: 0,
         name: "Dog",
@@ -23,7 +22,6 @@ class BodySection extends React.Component {
         imgRed: DogRed
       },
       {
-        id: 1,
         width: 0,
         votes: 0,
         name: "Cat",
@@ -32,7 +30,6 @@ class BodySection extends React.Component {
         imgRed: CatRed
       },
       {
-        id: 2,
         width: 0,
         votes: 0,
         name: "Fish",
@@ -41,7 +38,6 @@ class BodySection extends React.Component {
         imgRed: FishRed
       },
       {
-        id: 3,
         width: 0,
         votes: 0,
         name: "Other",
@@ -53,8 +49,38 @@ class BodySection extends React.Component {
 
     maxVotes: 0
   };
+  updateServerData = URL => {};
 
-  handlePickOption = id => {
+  getServerData = URL => {
+    fetch(URL)
+      .then(response => response.json())
+      .then(data => {
+        var options = this.state.voteOptions;
+        var maxVotes = this.state.maxVotes;
+
+        for (var i = 0; i < options.length; i++) {
+          options[i].votes = 0;
+        }
+
+        data.forEach(elem => {
+          const { rendered } = elem.title;
+          for (var i = 0; i < options.length; i++) {
+            rendered.toLowerCase() === options[i].name.toLowerCase() &&
+              options[i].votes++;
+            if (maxVotes < options[i].votes) maxVotes = options[i].votes;
+          }
+        });
+
+        if (maxVotes) {
+          options.forEach(option => {
+            option.width = 100 * (option.votes / maxVotes);
+          });
+        }
+        this.setState({ options, maxVotes });
+      });
+  };
+
+  handlePickOption = name => {
     if (this.props.menuOppened) {
       return;
     }
@@ -65,7 +91,7 @@ class BodySection extends React.Component {
     });
 
     optionsArr.filter(opt => {
-      return opt.id === id;
+      return opt.name === name;
     })[0].chosen = true;
 
     this.setState({ optionsArr });
@@ -90,21 +116,9 @@ class BodySection extends React.Component {
     }
     // Here is where info on pets would be requested and mutated
 
-    const chosenOpt = chosenOptArr[0];
-    const index = this.state.voteOptions.indexOf(chosenOpt);
-    var options = this.state.voteOptions;
-    options[index].votes += 1;
-    var maxVotes =
-      options[index].votes >= this.state.maxVotes
-        ? options[index].votes
-        : this.state.maxVotes;
-
-    options.forEach(option => {
-      option.width = 100 * (option.votes / maxVotes);
-    });
-
-    console.log(options);
-    this.setState({ options, maxVotes });
+    const URL = "http://localhost:8888/wordpress/wp-json/wp/v2/votes";
+    this.updateServerData(URL);
+    this.getServerData(URL);
   };
 
   render() {

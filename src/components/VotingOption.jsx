@@ -14,7 +14,7 @@ const VotingOption = props => {
     <div
       className={containerClass}
       onClick={() => {
-        props.onPick(props.option.id);
+        props.onPick(props.option.name);
       }}
     >
       <div className="pic-background">
