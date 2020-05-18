@@ -3,7 +3,6 @@ import "../styles/VotingOption/VotingOption.css";
 
 const VotingOption = props => {
   var containerClass = "container ";
-  containerClass += props.className;
   containerClass += props.option.chosen ? "chosen-opt" : "";
 
   var optionVotesWidthClasses = "votes-bar-counter ";

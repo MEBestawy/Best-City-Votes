@@ -7,11 +7,10 @@ const VotesSection = props => {
     <div className="options-container">
       {props.voteOptions.map(option => (
         <VotingOption
-          key={option.id}
+          key={option.name}
           option={option}
           maxVotes={props.maxVotes}
           onPick={props.onPick}
-          className={option.id === 0 ? "first " : ""}
         />
       ))}
     </div>
