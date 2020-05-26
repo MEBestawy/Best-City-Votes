@@ -7,7 +7,7 @@
 
 # firebase
 src/firebase/*
-.firebaserc
+.firebase*
 database.rules.json
 firebase.json
 firestore.indexes.json
