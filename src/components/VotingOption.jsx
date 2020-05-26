@@ -6,7 +6,7 @@ const VotingOption = props => {
   containerClass += props.option.chosen ? "chosen-opt" : "";
 
   var optionVotesWidthClasses = "votes-bar-counter ";
-  optionVotesWidthClasses += props.voted ? "show " : "display-none ";
+  optionVotesWidthClasses += props.voted ? "show " : "";
 
   var optionNameClasses = "vote-opt-name ";
   optionNameClasses += props.maxVotes !== 0 ? "display-none " : "";
@@ -30,7 +30,7 @@ const VotingOption = props => {
         className={optionVotesWidthClasses}
         style={{ width: props.option.width + "%" }}
       >
-        {props.option.votes}
+        {props.voted ? props.option.votes : ""}
       </div>
       <div className={optionNameClasses}>{props.option.name}</div>
     </div>
