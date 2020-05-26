@@ -61,35 +61,6 @@ class BodySection extends React.Component {
     this.setState({ options });
   }
 
-  getServerData = URL => {
-    fetch(URL)
-      .then(response => response.json())
-      .then(data => {
-        var options = this.state.voteOptions;
-        var maxVotes = this.state.maxVotes;
-
-        for (var i = 0; i < options.length; i++) {
-          options[i].votes = 0;
-        }
-
-        data.forEach(elem => {
-          const { rendered } = elem.title;
-          for (var i = 0; i < options.length; i++) {
-            rendered.toLowerCase() === options[i].name.toLowerCase() &&
-              options[i].votes++;
-            if (maxVotes < options[i].votes) maxVotes = options[i].votes;
-          }
-        });
-
-        if (maxVotes) {
-          options.forEach(option => {
-            option.width = 100 * (option.votes / maxVotes);
-          });
-        }
-        this.setState({ options, maxVotes });
-      });
-  };
-
   handlePickOption = name => {
     if (this.props.menuOppened) {
       return;
@@ -125,17 +96,21 @@ class BodySection extends React.Component {
       return;
     }
     const chosenOpt = chosenOptArr[0];
-
+    chosenOpt.votes += 1;
     firebase
       .firestore()
       .collection("votes")
       .doc(chosenOpt.docId)
-      .update({ votes: chosenOpt.votes++ });
+      .update({ votes: chosenOpt.votes });
 
-    this.setState({ chosenOpt });
+    var options = this.state.voteOptions;
+    for (let i = 0; i < options.length; i++) {
+      options[i] = options[i].name === chosenOpt.name ? chosenOpt : options[i];
+    }
+
+    this.setState({ options });
 
     var maxVotes = 0;
-    var options = this.state.voteOptions;
     options.forEach(option => {
       maxVotes = option.votes > maxVotes ? option.votes : maxVotes;
     });
