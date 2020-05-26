@@ -7,6 +7,7 @@ const VotesSection = props => {
     <div className="options-container">
       {props.voteOptions.map(option => (
         <VotingOption
+          voted={props.voted}
           key={option.name}
           option={option}
           maxVotes={props.maxVotes}

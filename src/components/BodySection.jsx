@@ -9,47 +9,57 @@ import DogRed from "../images/dog-red.png";
 import CatRed from "../images/cat-red.png";
 import FishRed from "../images/fish-red.png";
 import OtherRed from "../images/other-red.png";
+import firebase from "../firebase/firebase";
+
+class Option {
+  width = 0;
+  votes = 0;
+  name = "";
+  chosen = false;
+  imgGreen = null;
+  imgRed = null;
+  docId = null;
+
+  constructor(name, imgGreen, imgRed) {
+    this.name = name;
+    this.imgGreen = imgGreen;
+    this.imgRed = imgRed;
+  }
+}
 
 class BodySection extends React.Component {
   state = {
     voteOptions: [
-      {
-        width: 0,
-        votes: 0,
-        name: "Dog",
-        chosen: false,
-        imgGreen: DogGreen,
-        imgRed: DogRed
-      },
-      {
-        width: 0,
-        votes: 0,
-        name: "Cat",
-        chosen: false,
-        imgGreen: CatGreen,
-        imgRed: CatRed
-      },
-      {
-        width: 0,
-        votes: 0,
-        name: "Fish",
-        chosen: false,
-        imgGreen: FishGreen,
-        imgRed: FishRed
-      },
-      {
-        width: 0,
-        votes: 0,
-        name: "Other",
-        chosen: false,
-        imgGreen: OtherGreen,
-        imgRed: OtherRed
-      }
+      new Option("Dog", DogGreen, DogRed),
+      new Option("Cat", CatGreen, CatRed),
+      new Option("Fish", FishGreen, FishRed),
+      new Option("Other", OtherGreen, OtherRed)
     ],
+    voted: false,
 
     maxVotes: 0
   };
-  updateServerData = URL => {};
+
+  componentDidMount(props) {
+    var options = this.state.voteOptions;
+
+    firebase
+      .firestore()
+      .collection("votes")
+      .get()
+      .then(snap => {
+        snap.docs.forEach(doc => {
+          options.forEach(option => {
+            if (doc.data().pet === option.name.toLowerCase()) {
+              option.docId = doc.id;
+              option.votes = doc.data().votes;
+            }
+          });
+        });
+      });
+
+    this.setState({ options });
+  }
 
   getServerData = URL => {
     fetch(URL)
@@ -114,11 +124,27 @@ class BodySection extends React.Component {
       );
       return;
     }
-    // Here is where info on pets would be requested and mutated
+    const chosenOpt = chosenOptArr[0];
 
-    const URL = "http://localhost:8888/wordpress/wp-json/wp/v2/votes";
-    this.updateServerData(URL);
-    this.getServerData(URL);
+    firebase
+      .firestore()
+      .collection("votes")
+      .doc(chosenOpt.docId)
+      .update({ votes: chosenOpt.votes++ });
+
+    this.setState({ chosenOpt });
+
+    var maxVotes = 0;
+    var options = this.state.voteOptions;
+    options.forEach(option => {
+      maxVotes = option.votes > maxVotes ? option.votes : maxVotes;
+    });
+
+    options.forEach(option => {
+      option.width = 100 * (option.votes / maxVotes);
+    });
+
+    this.setState({ maxVotes, options, voted: true });
   };
 
   render() {
@@ -129,6 +155,7 @@ class BodySection extends React.Component {
       <div onClick={this.props.onPress} className={backgroundClasses}>
         <div className="title-prompt">Which is your favourite pet?</div>
         <VotingOptions
+          voted={this.state.voted}
           voteOptions={this.state.voteOptions}
           onPick={this.handlePickOption}
           maxVotes={this.state.maxVotes}
