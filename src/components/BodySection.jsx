@@ -1,14 +1,6 @@
 import React from "react";
 import VotingOptions from "./VotesSection";
 import "../styles/BodySection/BodySection.css";
-import DogGreen from "../images/dog-green.png";
-import CatGreen from "../images/cat-green.png";
-import FishGreen from "../images/fish-green.png";
-import OtherGreen from "../images/other-green.png";
-import DogRed from "../images/dog-red.png";
-import CatRed from "../images/cat-red.png";
-import FishRed from "../images/fish-red.png";
-import OtherRed from "../images/other-red.png";
 import firebase from "../firebase/firebase";
 
 class Option {
@@ -16,24 +8,20 @@ class Option {
   votes = 0;
   name = "";
   chosen = false;
-  imgGreen = null;
-  imgRed = null;
   docId = null;
 
-  constructor(name, imgGreen, imgRed) {
+  constructor(name) {
     this.name = name;
-    this.imgGreen = imgGreen;
-    this.imgRed = imgRed;
   }
 }
 
 class BodySection extends React.Component {
   state = {
     voteOptions: [
-      new Option("Dog", DogGreen, DogRed),
-      new Option("Cat", CatGreen, CatRed),
-      new Option("Fish", FishGreen, FishRed),
-      new Option("Other", OtherGreen, OtherRed)
+      new Option("Dog"),
+      new Option("Cat"),
+      new Option("Fish"),
+      new Option("Other")
     ],
     voted: false,
 

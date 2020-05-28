@@ -67,7 +67,6 @@ input[type="submit"] {
 
 .container,
 .container > *,
-img,
 .icon,
 .votes-bar-counter {
   -webkit-transition: 0.6s;
@@ -95,7 +94,7 @@ img,
   position: relative;
   z-index: 10;
   border: solid 2px #e03c3c;
-  background: transparent;
+  background: #d8eaff;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }

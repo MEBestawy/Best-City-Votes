@@ -16,7 +16,6 @@
 
 .container,
 .container > *,
-img,
 .icon,
 .votes-bar-counter {
   transition: 0.6s;
@@ -36,7 +35,7 @@ img,
   position: relative;
   z-index: 10;
   border: solid 2px get($colors, red-col);
-  background: transparent;
+  background: get($colors, mid-blue);
   box-sizing: border-box;
 }
 
