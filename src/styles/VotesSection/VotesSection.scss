@@ -1,11 +1,13 @@
 @import "../Utilities/Utilities";
-
 .options-container {
   width: 100%;
   height: fit-content;
-
+  background-color: get($colors, mid-blue);
   display: flex;
   flex-direction: column;
+  padding: 40px;
+  border-radius: 1em;
+  box-sizing: border-box;
 }
 
 .options-container > * {
@@ -25,4 +27,11 @@
 
 div:first-child {
   margin-top: 0;
+}
+
+// Smaller than mid screen
+@media screen and (max-width: get($breakPoints, mid)) {
+  .options-container {
+    padding: 30px;
+  }
 }

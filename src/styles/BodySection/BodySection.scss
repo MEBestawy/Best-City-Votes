@@ -21,22 +21,27 @@
 .title-prompt {
   font-size: 3em;
   margin-bottom: 20px;
-  color: get($colors, dark-blue);
+  color: get($colors, red-col);
 }
 
-#petVote {
+#pet-vote {
   position: absolute;
-  font-size: 1.2em;
-  padding: 8px;
-  margin: 50px 0;
+  font-size: 1.4em;
+  padding: 10px 8px;
+  margin: 30px 0;
+  margin-bottom: 50px;
   left: 50%;
   width: 30%;
   min-width: 120px;
   max-width: 400px;
   transform: translateX(-50%);
-  color: get($colors, light);
-  background-color: get($colors, blue-col);
+  color: get($colors, red-col);
+  background-color: get($colors, mid-blue);
   border-radius: 100px;
+  border: solid 2px;
+}
+#pet-vote:hover {
+  color: get($colors, green-col);
 }
 
 // Small screen
@@ -48,9 +53,9 @@
 
 // Bigger than mid screen
 @media screen and (min-width: get($breakPoints, mid)) {
-  #petVote {
+  #pet-vote {
     margin: 70px 0;
     margin-bottom: 50px;
-    font-size: 1.6em;
+    font-size: 1.8em;
   }
 }

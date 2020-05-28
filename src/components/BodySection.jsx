@@ -135,7 +135,7 @@ class BodySection extends React.Component {
           onPick={this.handlePickOption}
           maxVotes={this.state.maxVotes}
         />
-        <button id="petVote" onClick={this.handleVote}>
+        <button id="pet-vote" onClick={this.handleVote}>
           Vote
         </button>
       </div>

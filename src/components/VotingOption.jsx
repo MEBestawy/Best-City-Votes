@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPaw } from "@fortawesome/free-solid-svg-icons";
 import "../styles/VotingOption/VotingOption.css";
 
 const VotingOption = props => {
@@ -17,14 +19,8 @@ const VotingOption = props => {
         props.onPick(props.option.name);
       }}
     >
-      <div className="pic-background">
-        <img
-          className="pic"
-          src={
-            props.option.chosen ? props.option.imgGreen : props.option.imgRed
-          }
-          alt=""
-        />
+      <div className="icon-background">
+        <FontAwesomeIcon className="icon" icon={faPaw} />
       </div>
       <div
         className={optionVotesWidthClasses}
@@ -32,6 +28,7 @@ const VotingOption = props => {
       >
         {props.voted ? props.option.votes : ""}
       </div>
+
       <div className={optionNameClasses}>{props.option.name}</div>
     </div>
   );

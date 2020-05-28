@@ -14,7 +14,8 @@ body,
   height: 100%;
   width: 100%;
   position: absolute;
-  background-color: white;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f1f8ff), to(#97c7ff));
+  background-image: linear-gradient(#f1f8ff, #97c7ff);
   overflow-x: hidden;
 }
 
@@ -57,7 +58,7 @@ input[type="submit"] {
   height: 100%;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
-  border-left: 4px solid #217fff;
+  border-left: 4px solid #e03c3c;
   padding: 60px 30px;
   overflow: scroll;
   -webkit-box-sizing: border-box;

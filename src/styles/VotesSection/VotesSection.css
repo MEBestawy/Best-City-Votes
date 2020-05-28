@@ -14,7 +14,8 @@ body,
   height: 100%;
   width: 100%;
   position: absolute;
-  background-color: white;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f1f8ff), to(#97c7ff));
+  background-image: linear-gradient(#f1f8ff, #97c7ff);
   overflow-x: hidden;
 }
 
@@ -50,6 +51,7 @@ input[type="submit"] {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  background-color: #d8eaff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -57,6 +59,10 @@ input[type="submit"] {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 40px;
+  border-radius: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .options-container > * {
@@ -74,5 +80,11 @@ input[type="submit"] {
 
 div:first-child {
   margin-top: 0;
+}
+
+@media screen and (max-width: 830px) {
+  .options-container {
+    padding: 30px;
+  }
 }
 /*# sourceMappingURL=VotesSection.css.map */

@@ -14,7 +14,8 @@ body,
   height: 100%;
   width: 100%;
   position: absolute;
-  background-color: white;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f1f8ff), to(#97c7ff));
+  background-image: linear-gradient(#f1f8ff, #97c7ff);
   overflow-x: hidden;
 }
 
@@ -73,23 +74,29 @@ input[type="submit"] {
 .title-prompt {
   font-size: 3em;
   margin-bottom: 20px;
-  color: #003d90;
+  color: #e03c3c;
 }
 
-#petVote {
+#pet-vote {
   position: absolute;
-  font-size: 1.2em;
-  padding: 8px;
-  margin: 50px 0;
+  font-size: 1.4em;
+  padding: 10px 8px;
+  margin: 30px 0;
+  margin-bottom: 50px;
   left: 50%;
   width: 30%;
   min-width: 120px;
   max-width: 400px;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  color: white;
-  background-color: #217fff;
+  color: #e03c3c;
+  background-color: #d8eaff;
   border-radius: 100px;
+  border: solid 2px;
+}
+
+#pet-vote:hover {
+  color: #26b436;
 }
 
 @media screen and (max-width: 540px) {
@@ -99,10 +106,10 @@ input[type="submit"] {
 }
 
 @media screen and (min-width: 830px) {
-  #petVote {
+  #pet-vote {
     margin: 70px 0;
     margin-bottom: 50px;
-    font-size: 1.6em;
+    font-size: 1.8em;
   }
 }
 /*# sourceMappingURL=BodySection.css.map */

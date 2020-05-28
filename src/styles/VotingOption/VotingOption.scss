@@ -16,30 +16,31 @@
 
 .container,
 .container > *,
-img {
-  transition: 0.3s;
+img,
+.icon,
+.votes-bar-counter {
+  transition: 0.6s;
 }
 
-.pic-background {
+.icon {
+  color: get($colors, red-col);
+  font-size: 30px;
+}
+.icon-background {
   width: 40px;
   height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 100%;
   position: relative;
   z-index: 10;
-  background-color: get($colors, trans-pink);
-}
-
-.pic {
-  width: 100%;
-  height: 100%;
-  border: 3px solid;
-  border-radius: 100%;
-  border-color: get($colors, red-col);
+  border: solid 2px get($colors, red-col);
+  background: transparent;
   box-sizing: border-box;
 }
 
 .votes-bar-counter {
-  transition: 1s;
   position: relative;
   border-radius: 0 50px 50px 0;
   color: get($colors, light);
@@ -66,14 +67,15 @@ img {
 
 .chosen-opt {
   border-bottom-color: get($colors, green-col);
-  .pic-background {
+  .icon-background {
     background-color: get($colors, trans-green);
+    border-color: get($colors, green-col);
   }
   .votes-bar-counter {
     background-color: get($colors, green-col);
   }
-  .pic {
-    border-color: get($colors, green-col);
+  .icon {
+    color: get($colors, green-col);
   }
   .vote-opt-name {
     color: get($colors, green-col);
@@ -82,9 +84,13 @@ img {
 
 // Bigger than mid screen
 @media screen and (min-width: get($breakPoints, mid)) {
-  .pic-background {
+  .icon {
+    font-size: 45px;
+  }
+  .icon-background {
     width: 60px;
     height: 60px;
+    border-width: 3px;
   }
 
   .votes-bar-counter.show {
@@ -96,7 +102,7 @@ img {
   }
 
   .vote-opt-name {
-    font-size: 2.1em;
+    font-size: 2.3em;
     margin-left: 15px;
   }
 }
