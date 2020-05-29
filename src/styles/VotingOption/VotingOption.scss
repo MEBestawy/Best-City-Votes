@@ -9,36 +9,38 @@
   border-bottom: 3px solid get($colors, red-col);
   cursor: pointer;
 }
-
 .container > * {
   align-self: center;
 }
-
 .container,
 .container > *,
-.icon,
-.votes-bar-counter {
+.icon {
   transition: 0.6s;
 }
 
 .icon {
-  color: get($colors, red-col);
   font-size: 30px;
 }
 .icon-background {
   width: 40px;
   height: 40px;
   display: flex;
+  z-index: 3;
   align-items: center;
   justify-content: center;
   border-radius: 100%;
   position: relative;
-  z-index: 10;
   border: solid 2px get($colors, red-col);
   background: get($colors, mid-blue);
   box-sizing: border-box;
 }
+.icon-background > * {
+  color: get($colors, red-col);
+}
 
+.vote-counter {
+  font-size: 1.3em;
+}
 .votes-bar-counter {
   position: relative;
   border-radius: 0 50px 50px 0;
@@ -70,12 +72,14 @@
     background-color: get($colors, trans-green);
     border-color: get($colors, green-col);
   }
+  .icon-background > * {
+    color: get($colors, green-col);
+  }
+
   .votes-bar-counter {
     background-color: get($colors, green-col);
   }
-  .icon {
-    color: get($colors, green-col);
-  }
+
   .vote-opt-name {
     color: get($colors, green-col);
   }
@@ -90,6 +94,10 @@
     width: 60px;
     height: 60px;
     border-width: 3px;
+  }
+
+  .vote-counter {
+    font-size: 1.9em;
   }
 
   .votes-bar-counter.show {

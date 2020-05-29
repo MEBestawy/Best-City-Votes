@@ -1,8 +1,9 @@
 import React from "react";
-import MenuToggle from "./components/MenuToggle";
-import BodySection from "./components/BodySection";
-import SideDrawer from "./components/SideDrawer";
-import "./styles/App/App.css";
+import MenuToggle from "./MenuToggle";
+import BodySection from "./BodySection";
+import SideDrawer from "./SideDrawer";
+import BlurFilter from "./BlurFilter";
+import "../styles/App/App.css";
 
 class App extends React.Component {
   state = {
@@ -13,7 +14,7 @@ class App extends React.Component {
     this.setState({ menuOpened: !this.state.menuOpened });
   };
 
-  handleBodySectionPress = () => {
+  handleBlurPress = () => {
     this.setState({ menuOpened: false });
   };
 
@@ -24,6 +25,10 @@ class App extends React.Component {
         <MenuToggle
           opened={this.state.menuOpened}
           onPress={this.handleMenuTogglePress}
+        />
+        <BlurFilter
+          onPress={this.handleBlurPress}
+          menuOpenned={this.state.menuOpened}
         />
         <BodySection
           onPress={this.handleBodySectionPress}

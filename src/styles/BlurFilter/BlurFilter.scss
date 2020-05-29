@@ -1,0 +1,9 @@
+#blur-screen {
+  position: fixed;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(3px) grayscale(30%);
+  user-select: none;
+  cursor: initial;
+}

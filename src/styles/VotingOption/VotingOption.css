@@ -67,14 +67,12 @@ input[type="submit"] {
 
 .container,
 .container > *,
-.icon,
-.votes-bar-counter {
+.icon {
   -webkit-transition: 0.6s;
   transition: 0.6s;
 }
 
 .icon {
-  color: #e03c3c;
   font-size: 30px;
 }
 
@@ -84,6 +82,7 @@ input[type="submit"] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  z-index: 3;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -92,11 +91,18 @@ input[type="submit"] {
           justify-content: center;
   border-radius: 100%;
   position: relative;
-  z-index: 10;
   border: solid 2px #e03c3c;
   background: #d8eaff;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.icon-background > * {
+  color: #e03c3c;
+}
+
+.vote-counter {
+  font-size: 1.3em;
 }
 
 .votes-bar-counter {
@@ -135,12 +141,12 @@ input[type="submit"] {
   border-color: #26b436;
 }
 
-.chosen-opt .votes-bar-counter {
-  background-color: #26b436;
+.chosen-opt .icon-background > * {
+  color: #26b436;
 }
 
-.chosen-opt .icon {
-  color: #26b436;
+.chosen-opt .votes-bar-counter {
+  background-color: #26b436;
 }
 
 .chosen-opt .vote-opt-name {
@@ -155,6 +161,9 @@ input[type="submit"] {
     width: 60px;
     height: 60px;
     border-width: 3px;
+  }
+  .vote-counter {
+    font-size: 1.9em;
   }
   .votes-bar-counter.show {
     height: 60px;

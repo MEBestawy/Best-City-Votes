@@ -1,5 +1,5 @@
 import React from "react";
-import VotingOptions from "./VotesSection";
+import VotesSection from "./VotesSection";
 import "../styles/BodySection/BodySection.css";
 import firebase from "../firebase/firebase";
 
@@ -11,42 +11,37 @@ class Option {
   docId = null;
 
   constructor(name) {
-    this.name = name;
+    this.name = name[0].toUpperCase() + name.substring(1);
   }
 }
 
 class BodySection extends React.Component {
   state = {
-    voteOptions: [
-      new Option("Dog"),
-      new Option("Cat"),
-      new Option("Fish"),
-      new Option("Other")
-    ],
+    voteOptions: [],
     voted: false,
-
-    maxVotes: 0
+    maxVotes: 0,
+    loading: true
   };
 
   componentDidMount(props) {
-    var options = this.state.voteOptions;
+    var { voteOptions } = this.state;
+    var { maxVotes } = this.state;
 
     firebase
       .firestore()
       .collection("votes")
       .get()
-      .then(snap => {
-        snap.docs.forEach(doc => {
-          options.forEach(option => {
-            if (doc.data().pet === option.name.toLowerCase()) {
-              option.docId = doc.id;
-              option.votes = doc.data().votes;
-            }
-          });
+      .then(snapshot => {
+        snapshot.docs.forEach(doc => {
+          var option = new Option(doc.data().name);
+          option.docId = doc.id;
+          option.votes = doc.data().votes;
+          maxVotes = option.votes > maxVotes ? option.votes : maxVotes;
+          voteOptions.push(option);
         });
-      });
 
-    this.setState({ options });
+        this.setState({ voteOptions, maxVotes, loading: false });
+      });
   }
 
   handlePickOption = name => {
@@ -98,7 +93,7 @@ class BodySection extends React.Component {
 
     this.setState({ options });
 
-    var maxVotes = 0;
+    var maxVotes = this.state.maxVotes;
     options.forEach(option => {
       maxVotes = option.votes > maxVotes ? option.votes : maxVotes;
     });
@@ -111,19 +106,20 @@ class BodySection extends React.Component {
   };
 
   render() {
-    var backgroundClasses = "body-background ";
-    backgroundClasses += this.props.menuOppened ? "blur" : "";
+    if (this.state.voteOptions.length === 0) {
+      return <h1>Loading...</h1>;
+    }
 
     return (
-      <div onClick={this.props.onPress} className={backgroundClasses}>
+      <div onClick={this.props.onPress} className={"body-section-container"}>
         <div className="title-prompt">Which is your favourite pet?</div>
-        <VotingOptions
+        <VotesSection
           voted={this.state.voted}
           voteOptions={this.state.voteOptions}
           onPick={this.handlePickOption}
           maxVotes={this.state.maxVotes}
         />
-        <button id="pet-vote" onClick={this.handleVote}>
+        <button id="vote-btn" onClick={this.handleVote}>
           Vote
         </button>
       </div>

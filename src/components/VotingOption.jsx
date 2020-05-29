@@ -11,7 +11,13 @@ const VotingOption = props => {
   optionVotesWidthClasses += props.voted ? "show " : "";
 
   var optionNameClasses = "vote-opt-name ";
-  optionNameClasses += props.maxVotes !== 0 ? "display-none " : "";
+  optionNameClasses += props.voted ? "display-none " : "";
+
+  const voteCounter = props.voted ? (
+    <p className="vote-counter">{props.option.votes}</p>
+  ) : (
+    <FontAwesomeIcon className="icon" icon={faPaw} />
+  );
   return (
     <div
       className={containerClass}
@@ -19,15 +25,11 @@ const VotingOption = props => {
         props.onPick(props.option.name);
       }}
     >
-      <div className="icon-background">
-        <FontAwesomeIcon className="icon" icon={faPaw} />
-      </div>
+      <div className="icon-background">{voteCounter}</div>
       <div
         className={optionVotesWidthClasses}
         style={{ width: props.option.width + "%" }}
-      >
-        {props.voted ? props.option.votes : ""}
-      </div>
+      />
 
       <div className={optionNameClasses}>{props.option.name}</div>
     </div>

@@ -51,6 +51,9 @@ input[type="submit"] {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  max-height: 480px;
+  overflow: scroll;
+  -ms-overflow-style: none;
   background-color: #d8eaff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -65,6 +68,10 @@ input[type="submit"] {
           box-sizing: border-box;
 }
 
+.options-container::-webkit-scrollbar {
+  display: none;
+}
+
 .options-container > * {
   margin-top: 60px;
 }
@@ -74,7 +81,7 @@ input[type="submit"] {
     margin-top: 40px;
   }
   .options-container > * {
-    margin-top: 80px;
+    margin-top: 70px;
   }
 }
 

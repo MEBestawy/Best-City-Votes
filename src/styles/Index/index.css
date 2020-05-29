@@ -1,0 +1,61 @@
+/* File for importing all available scss imports */
+/* Variables for other scss files */
+/* Shared functions for scss files */
+/* Shared functions for scss files */
+/* Shared styles for webpages */
+/* Variables for other scss files */
+/* Shared functions for scss files */
+/* Shared functions for scss files */
+html,
+body,
+#root {
+  scroll-behavior: smooth;
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f1f8ff), to(#97c7ff));
+  background-image: linear-gradient(#f1f8ff, #97c7ff);
+  overflow-x: hidden;
+}
+
+body > * {
+  font-family: "Helvetica Neue";
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font-family: "Helvetica Neue";
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+button:focus,
+a:focus,
+input:focus {
+  outline: none;
+}
+
+button,
+a,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+html,
+#root,
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+/*# sourceMappingURL=index.css.map */

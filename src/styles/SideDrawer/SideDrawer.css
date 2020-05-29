@@ -47,7 +47,7 @@ input[type="submit"] {
 }
 
 .drawer-container {
-  z-index: 8;
+  z-index: 10;
   -webkit-transition: 0.8s;
   transition: 0.8s;
   position: fixed;

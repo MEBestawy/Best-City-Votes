@@ -1,30 +1,20 @@
 @import "../Utilities/Utilities";
 
-.blur {
-  transition: 1s ease;
-  background-color: transparent;
-  filter: blur(5px) brightness(80%) grayscale(20%);
-  overflow: hidden;
-}
-.blur * {
-  user-select: none;
-  cursor: initial;
-}
-
-.body-background {
+.body-section-container {
   width: 100%;
-  height: 100%;
+  max-width: 1200px;
+  margin: auto;
   padding: 50px 20px;
   box-sizing: border-box;
 }
 
 .title-prompt {
-  font-size: 3em;
+  font-size: 2.5em;
   margin-bottom: 20px;
   color: get($colors, red-col);
 }
 
-#pet-vote {
+#vote-btn {
   position: absolute;
   font-size: 1.4em;
   padding: 10px 8px;
@@ -39,8 +29,9 @@
   background-color: get($colors, mid-blue);
   border-radius: 100px;
   border: solid 2px;
+  box-sizing: border-box;
 }
-#pet-vote:hover {
+#vote-btn:hover {
   color: get($colors, green-col);
 }
 
@@ -57,5 +48,9 @@
     margin: 70px 0;
     margin-bottom: 50px;
     font-size: 1.8em;
+  }
+
+  .title-prompt {
+    font-size: 3.2em;
   }
 }

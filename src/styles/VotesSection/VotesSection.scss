@@ -2,6 +2,9 @@
 .options-container {
   width: 100%;
   height: fit-content;
+  max-height: 480px;
+  overflow: scroll;
+  -ms-overflow-style: none;
   background-color: get($colors, mid-blue);
   display: flex;
   flex-direction: column;
@@ -9,7 +12,9 @@
   border-radius: 1em;
   box-sizing: border-box;
 }
-
+.options-container::-webkit-scrollbar {
+  display: none;
+}
 .options-container > * {
   margin-top: 60px;
 }
@@ -21,7 +26,7 @@
   }
 
   .options-container > * {
-    margin-top: 80px;
+    margin-top: 70px;
   }
 }
 
