@@ -37,6 +37,9 @@
 
 // Small screen
 @media screen and (max-width: get($breakPoints, small)) {
+  .body-section-container {
+    padding: 40px 10px;
+  }
   .title-prompt {
     font-size: 2em;
   }

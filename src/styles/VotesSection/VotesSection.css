@@ -52,7 +52,8 @@ input[type="submit"] {
   height: -moz-fit-content;
   height: fit-content;
   max-height: 480px;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   -ms-overflow-style: none;
   background-color: #d8eaff;
   display: -webkit-box;
@@ -85,13 +86,22 @@ input[type="submit"] {
   }
 }
 
-div:first-child {
-  margin-top: 0;
-}
-
 @media screen and (max-width: 830px) {
   .options-container {
     padding: 30px;
   }
+}
+
+@media screen and (max-width: 540px) {
+  .options-container {
+    padding: 30px 15px;
+  }
+  .options-container > * {
+    margin-top: 55px;
+  }
+}
+
+div:first-child {
+  margin-top: 0;
 }
 /*# sourceMappingURL=VotesSection.css.map */

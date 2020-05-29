@@ -5,6 +5,7 @@
 }
 .container {
   display: flex;
+  position: relative;
   padding-bottom: 5px;
   border-bottom: 3px solid get($colors, red-col);
   cursor: pointer;
@@ -19,7 +20,8 @@
 }
 
 .icon {
-  font-size: 30px;
+  font-size: 27px;
+  align-self: flex-end;
 }
 .icon-background {
   width: 40px;
@@ -33,6 +35,7 @@
   border: solid 2px get($colors, red-col);
   background: get($colors, mid-blue);
   box-sizing: border-box;
+  overflow: hidden;
 }
 .icon-background > * {
   color: get($colors, red-col);
@@ -58,37 +61,24 @@
 }
 
 .vote-opt-name {
-  font-size: 1.9em;
-  margin-top: 5px;
-  position: relative;
+  font-size: 1.8em;
+  margin-left: 45px;
+  position: absolute;
   z-index: 2;
   color: get($colors, red-col);
-  margin-left: 10px;
 }
 
-.chosen-opt {
-  border-bottom-color: get($colors, green-col);
-  .icon-background {
-    background-color: get($colors, trans-green);
-    border-color: get($colors, green-col);
-  }
-  .icon-background > * {
-    color: get($colors, green-col);
-  }
-
-  .votes-bar-counter {
-    background-color: get($colors, green-col);
-  }
-
+// Smaller screen
+@media screen and (max-width: get($breakPoints, small)) {
   .vote-opt-name {
-    color: get($colors, green-col);
+    font-size: 1.7em;
   }
 }
 
 // Bigger than mid screen
 @media screen and (min-width: get($breakPoints, mid)) {
   .icon {
-    font-size: 45px;
+    font-size: 40px;
   }
   .icon-background {
     width: 60px;
@@ -110,6 +100,30 @@
 
   .vote-opt-name {
     font-size: 2.3em;
-    margin-left: 15px;
+    margin-left: 65px;
   }
+}
+
+.chosen-opt {
+  border-bottom-color: get($colors, green-col);
+  .icon-background {
+    background-color: get($colors, trans-green);
+    border-color: get($colors, green-col);
+  }
+  .icon-background > * {
+    color: get($colors, green-col);
+  }
+
+  .votes-bar-counter {
+    background-color: get($colors, green-col);
+  }
+
+  .vote-opt-name {
+    color: get($colors, green-col);
+  }
+}
+
+.show-name-with-bar,
+.chosen-opt > .show-name-with-bar {
+  color: get($colors, light);
 }

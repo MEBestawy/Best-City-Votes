@@ -3,7 +3,8 @@
   width: 100%;
   height: fit-content;
   max-height: 480px;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   -ms-overflow-style: none;
   background-color: get($colors, mid-blue);
   display: flex;
@@ -30,13 +31,24 @@
   }
 }
 
-div:first-child {
-  margin-top: 0;
-}
-
 // Smaller than mid screen
 @media screen and (max-width: get($breakPoints, mid)) {
   .options-container {
     padding: 30px;
   }
+}
+
+//Small screen
+@media screen and (max-width: get($breakPoints, small)) {
+  .options-container {
+    padding: 30px 15px;
+  }
+
+  .options-container > * {
+    margin-top: 55px;
+  }
+}
+
+div:first-child {
+  margin-top: 0;
 }
