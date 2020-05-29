@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPaw } from "@fortawesome/free-solid-svg-icons";
+import { faCity } from "@fortawesome/free-solid-svg-icons";
 import "../styles/VotingOption/VotingOption.css";
 
 const VotingOption = props => {
@@ -11,13 +11,14 @@ const VotingOption = props => {
   optionVotesWidthClasses += props.voted ? "show " : "";
 
   var optionNameClasses = "vote-opt-name ";
-  optionNameClasses += props.voted ? "display-none " : "";
+  optionNameClasses += props.voted ? "show-name-with-bar " : "";
 
   const voteCounter = props.voted ? (
     <p className="vote-counter">{props.option.votes}</p>
   ) : (
-    <FontAwesomeIcon className="icon" icon={faPaw} />
+    <FontAwesomeIcon className="icon" icon={faCity} />
   );
+
   return (
     <div
       className={containerClass}

@@ -23,6 +23,24 @@ class BodySection extends React.Component {
     loading: true
   };
 
+  getVotesArr(options = this.state.voteOptions) {
+    var arr = [];
+
+    options.forEach(option => {
+      arr.push(option.votes);
+    });
+
+    return arr;
+  }
+
+  setWidths(options = this.state.voteOptions, maxV = this.state.maxVotes) {
+    options.forEach(option => {
+      option.width = 100 * (option.votes / maxV);
+    });
+    console.log(options);
+    this.setState({ voteOptions: options });
+  }
+
   componentDidMount(props) {
     var { voteOptions } = this.state;
     var { maxVotes } = this.state;
@@ -30,14 +48,29 @@ class BodySection extends React.Component {
     firebase
       .firestore()
       .collection("votes")
-      .get()
-      .then(snapshot => {
-        snapshot.docs.forEach(doc => {
-          var option = new Option(doc.data().name);
-          option.docId = doc.id;
-          option.votes = doc.data().votes;
-          maxVotes = option.votes > maxVotes ? option.votes : maxVotes;
-          voteOptions.push(option);
+      .onSnapshot(snapshot => {
+        snapshot.docChanges().forEach(change => {
+          var option = new Option(change.doc.data().name);
+          option.docId = change.doc.id;
+          option.votes = change.doc.data().votes;
+
+          var oldOption = null;
+          voteOptions.forEach(opt => {
+            if (opt.name === option.name) {
+              oldOption = opt;
+            }
+          });
+
+          // Is it a new option
+          if (oldOption === null) {
+            voteOptions.push(option);
+          } else {
+            option.chosen = oldOption.chosen;
+            voteOptions[voteOptions.indexOf(oldOption)] = option;
+          }
+
+          maxVotes = Math.max(...this.getVotesArr(voteOptions));
+          if (this.state.voted) this.setWidths(voteOptions, maxVotes);
         });
 
         this.setState({ voteOptions, maxVotes, loading: false });
@@ -49,19 +82,21 @@ class BodySection extends React.Component {
       return;
     }
 
-    const optionsArr = this.state.voteOptions;
-    optionsArr.forEach(option => {
+    const { voteOptions } = this.state;
+    voteOptions.forEach(option => {
       option.chosen = false;
     });
 
-    optionsArr.filter(opt => {
+    voteOptions.filter(opt => {
       return opt.name === name;
     })[0].chosen = true;
 
-    this.setState({ optionsArr });
+    this.setState({ voteOptions });
   };
 
   handleVote = () => {
+    this.setState({ voted: true });
+
     var chosenOptArr = [];
     this.state.voteOptions.forEach(option => {
       if (option.chosen) {
@@ -86,23 +121,16 @@ class BodySection extends React.Component {
       .doc(chosenOpt.docId)
       .update({ votes: chosenOpt.votes });
 
-    var options = this.state.voteOptions;
-    for (let i = 0; i < options.length; i++) {
-      options[i] = options[i].name === chosenOpt.name ? chosenOpt : options[i];
+    var { voteOptions } = this.state;
+    for (let i = 0; i < voteOptions.length; i++) {
+      voteOptions[i] =
+        voteOptions[i].name === chosenOpt.name ? chosenOpt : voteOptions[i];
     }
 
-    this.setState({ options });
-
     var maxVotes = this.state.maxVotes;
-    options.forEach(option => {
-      maxVotes = option.votes > maxVotes ? option.votes : maxVotes;
-    });
-
-    options.forEach(option => {
-      option.width = 100 * (option.votes / maxVotes);
-    });
-
-    this.setState({ maxVotes, options, voted: true });
+    maxVotes = Math.max(...this.getVotesArr());
+    this.setWidths(voteOptions, maxVotes);
+    this.setState({ maxVotes, voteOptions });
   };
 
   render() {
@@ -112,7 +140,7 @@ class BodySection extends React.Component {
 
     return (
       <div onClick={this.props.onPress} className={"body-section-container"}>
-        <div className="title-prompt">Which is your favourite pet?</div>
+        <div className="title-prompt">What is your favourite city?</div>
         <VotesSection
           voted={this.state.voted}
           voteOptions={this.state.voteOptions}
