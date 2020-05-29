@@ -16,6 +16,8 @@ storage.rules
 
 # testing
 /coverage
+serviceWorker.js
+serviceWorker.js
 
 # production
 /build
