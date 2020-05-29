@@ -34,9 +34,7 @@ button {
   border: 0;
 }
 
-button:focus,
-a:focus,
-input:focus {
+*:focus {
   outline: none;
 }
 
@@ -46,16 +44,12 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-.options-container {
-  width: 100%;
+.votes-section {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   max-height: 480px;
-  overflow-y: scroll;
   overflow-x: hidden;
-  -ms-overflow-style: none;
-  background-color: #d8eaff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -63,10 +57,27 @@ input[type="submit"] {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-color: #d8eaff;
   padding: 40px;
   border-radius: 1em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+}
+
+.options-container {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 1em;
+  margin-top: 20px;
 }
 
 .options-container::-webkit-scrollbar {
@@ -87,14 +98,17 @@ input[type="submit"] {
 }
 
 @media screen and (max-width: 830px) {
-  .options-container {
+  .votes-section {
     padding: 30px;
   }
 }
 
 @media screen and (max-width: 540px) {
-  .options-container {
+  .votes-section {
     padding: 30px 15px;
+  }
+  .options-container {
+    margin-top: 30px;
   }
   .options-container > * {
     margin-top: 55px;

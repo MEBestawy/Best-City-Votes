@@ -32,16 +32,13 @@ a {
 // Properties for buttons
 button {
   font-family: get($fonts, content);
-  color: get($colors, lighter-dark);
   padding: 0;
   margin: 0;
   border: 0;
 }
 
 // Removing unwanted outlines
-button:focus,
-a:focus,
-input:focus {
+*:focus {
   outline: none;
 }
 

@@ -34,9 +34,7 @@ button {
   border: 0;
 }
 
-button:focus,
-a:focus,
-input:focus {
+*:focus {
   outline: none;
 }
 

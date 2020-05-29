@@ -1,17 +1,23 @@
 @import "../Utilities/Utilities";
+.votes-section {
+  height: fit-content;
+  max-height: 480px;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: get($colors, mid-blue);
+  padding: 40px;
+  border-radius: 1em;
+}
 .options-container {
   width: 100%;
   height: fit-content;
-  max-height: 480px;
   overflow-y: scroll;
-  overflow-x: hidden;
   -ms-overflow-style: none;
-  background-color: get($colors, mid-blue);
   display: flex;
   flex-direction: column;
-  padding: 40px;
   border-radius: 1em;
-  box-sizing: border-box;
+  margin-top: 20px;
 }
 .options-container::-webkit-scrollbar {
   display: none;
@@ -33,15 +39,19 @@
 
 // Smaller than mid screen
 @media screen and (max-width: get($breakPoints, mid)) {
-  .options-container {
+  .votes-section {
     padding: 30px;
   }
 }
 
 //Small screen
 @media screen and (max-width: get($breakPoints, small)) {
-  .options-container {
+  .votes-section {
     padding: 30px 15px;
+  }
+
+  .options-container {
+    margin-top: 30px;
   }
 
   .options-container > * {

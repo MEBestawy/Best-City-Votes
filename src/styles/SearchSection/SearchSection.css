@@ -1,0 +1,136 @@
+/* File for importing all available scss imports */
+/* Variables for other scss files */
+/* Shared functions for scss files */
+/* Shared functions for scss files */
+/* Shared styles for webpages */
+/* Variables for other scss files */
+/* Shared functions for scss files */
+/* Shared functions for scss files */
+html,
+body,
+#root {
+  scroll-behavior: smooth;
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f1f8ff), to(#97c7ff));
+  background-image: linear-gradient(#f1f8ff, #97c7ff);
+  overflow-x: hidden;
+}
+
+body > * {
+  font-family: "Helvetica Neue";
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font-family: "Helvetica Neue";
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+button,
+a,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+.search-section-container {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 10px;
+      grid-template-areas: "search-bar search-bar search-bar search-btn add-btn";
+}
+
+.search-section-container > * {
+  width: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin: 0;
+  border-radius: 5px;
+  height: 43px;
+  border: none;
+  padding: 10px 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 1.3em;
+  color: #1863cd;
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0);
+}
+
+.search-bar {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: search-bar;
+  padding-left: 15px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+::-webkit-input-placeholder {
+  color: #1863cd;
+}
+
+:-ms-input-placeholder {
+  color: #1863cd;
+}
+
+::-ms-input-placeholder {
+  color: #1863cd;
+}
+
+::placeholder {
+  color: #1863cd;
+}
+
+#search-btn {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: search-btn;
+}
+
+#add-btn {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+  grid-area: add-btn;
+}
+
+.search-bar-btn:hover {
+  border-color: #1863cd;
+}
+
+@media screen and (max-width: 540px) {
+  .search-section-container {
+        grid-template-areas: "search-bar search-bar " "search-btn add-btn";
+  }
+  .search-bar {
+    text-align: center;
+  }
+  .search-bar-btn {
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (min-width: 830px) {
+  .search-section-container > * {
+    height: 50px;
+  }
+}
+/*# sourceMappingURL=SearchSection.css.map */

@@ -1,0 +1,70 @@
+@import "../Utilities/Utilities";
+$custom-blue: #1863cd;
+
+.search-section-container {
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas: "search-bar search-bar search-bar search-btn add-btn";
+}
+.search-section-container > * {
+  width: 100%;
+  user-select: none;
+  margin: 0;
+  border-radius: 5px;
+  height: 43px;
+  border: none;
+  padding: 10px 30px;
+  box-sizing: border-box;
+  font-size: 1.3em;
+  color: $custom-blue;
+  background: rgba($color: get($colors, light), $alpha: 0.3);
+  border: 2px solid rgba($color: get($colors, light), $alpha: 0);
+}
+
+.search-bar {
+  grid-area: search-bar;
+  padding-left: 15px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+::placeholder {
+  color: $custom-blue;
+}
+
+#search-btn {
+  grid-area: search-btn;
+}
+
+#add-btn {
+  grid-area: add-btn;
+}
+
+.search-bar-btn:hover {
+  border-color: $custom-blue;
+}
+
+// Small screen
+@media screen and (max-width: get($breakPoints, small)) {
+  .search-section-container {
+    grid-template-areas:
+      "search-bar search-bar "
+      "search-btn add-btn";
+  }
+
+  .search-bar {
+    text-align: center;
+  }
+
+  .search-bar-btn {
+    font-size: 1.2em;
+  }
+}
+
+// Bigger than mid screen
+@media screen and (min-width: get($breakPoints, mid)) {
+  .search-section-container > * {
+    height: 50px;
+  }
+}
