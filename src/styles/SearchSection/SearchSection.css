@@ -46,9 +46,6 @@ input[type="submit"] {
 
 .search-section-container {
   width: 100%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
   display: -ms-grid;
   display: grid;
   grid-gap: 10px;
@@ -63,7 +60,7 @@ input[type="submit"] {
           user-select: none;
   margin: 0;
   border-radius: 5px;
-  height: 43px;
+  height: 50px;
   border: none;
   padding: 10px 30px;
   -webkit-box-sizing: border-box;
@@ -74,7 +71,7 @@ input[type="submit"] {
   border: 2px solid rgba(255, 255, 255, 0);
 }
 
-.search-bar {
+#search-bar {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
@@ -120,7 +117,7 @@ input[type="submit"] {
   .search-section-container {
         grid-template-areas: "search-bar search-bar " "search-btn add-btn";
   }
-  .search-bar {
+  #search-bar {
     text-align: center;
   }
   .search-bar-btn {
@@ -129,8 +126,12 @@ input[type="submit"] {
 }
 
 @media screen and (min-width: 830px) {
+  .search-section-container {
+    grid-gap: 20px;
+  }
   .search-section-container > * {
-    height: 50px;
+    font-size: 1.5em;
+    height: 60px;
   }
 }
 /*# sourceMappingURL=SearchSection.css.map */

@@ -3,7 +3,6 @@ $custom-blue: #1863cd;
 
 .search-section-container {
   width: 100%;
-  height: fit-content;
   display: grid;
   grid-gap: 10px;
   grid-template-areas: "search-bar search-bar search-bar search-btn add-btn";
@@ -13,7 +12,7 @@ $custom-blue: #1863cd;
   user-select: none;
   margin: 0;
   border-radius: 5px;
-  height: 43px;
+  height: 50px;
   border: none;
   padding: 10px 30px;
   box-sizing: border-box;
@@ -23,7 +22,7 @@ $custom-blue: #1863cd;
   border: 2px solid rgba($color: get($colors, light), $alpha: 0);
 }
 
-.search-bar {
+#search-bar {
   grid-area: search-bar;
   padding-left: 15px;
   text-overflow: ellipsis;
@@ -53,7 +52,7 @@ $custom-blue: #1863cd;
       "search-btn add-btn";
   }
 
-  .search-bar {
+  #search-bar {
     text-align: center;
   }
 
@@ -64,7 +63,11 @@ $custom-blue: #1863cd;
 
 // Bigger than mid screen
 @media screen and (min-width: get($breakPoints, mid)) {
+  .search-section-container {
+    grid-gap: 20px;
+  }
   .search-section-container > * {
-    height: 50px;
+    font-size: 1.5em;
+    height: 60px;
   }
 }

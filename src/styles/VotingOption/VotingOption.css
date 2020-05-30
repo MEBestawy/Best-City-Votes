@@ -49,19 +49,13 @@ input[type="submit"] {
 }
 
 .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   position: relative;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   padding-bottom: 5px;
   border-bottom: 3px solid #e03c3c;
   cursor: pointer;
-}
-
-.container > * {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
 }
 
 .container,
@@ -78,6 +72,7 @@ input[type="submit"] {
 }
 
 .icon-background {
+  float: left;
   width: 40px;
   height: 40px;
   display: -webkit-box;
@@ -108,24 +103,25 @@ input[type="submit"] {
 }
 
 .votes-bar-counter {
+  max-width: inherit;
   position: relative;
+  left: 20px;
   border-radius: 0 50px 50px 0;
   color: white;
   font-size: 1.2em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  max-width: calc(100% - 20px);
   background-color: #e03c3c;
 }
 
 .votes-bar-counter.show {
   height: 40px;
-  margin-left: -20px;
-  text-align: right;
-  padding: 7px;
-  padding-right: 15px;
 }
 
 .vote-opt-name {
+  float: left;
+  bottom: 10px;
   font-size: 1.8em;
   margin-left: 45px;
   position: absolute;
@@ -136,6 +132,7 @@ input[type="submit"] {
 @media screen and (max-width: 540px) {
   .vote-opt-name {
     font-size: 1.7em;
+    bottom: 9px;
   }
 }
 
@@ -152,15 +149,14 @@ input[type="submit"] {
     font-size: 1.9em;
   }
   .votes-bar-counter.show {
+    max-width: calc(100% - 30px);
     height: 60px;
-    font-size: 1.5em;
-    padding: 12px;
-    padding-right: 25px;
-    margin-left: -30px;
+    left: 30px;
   }
   .vote-opt-name {
+    bottom: 15px;
     font-size: 2.3em;
-    margin-left: 65px;
+    margin-left: 75px;
   }
 }
 

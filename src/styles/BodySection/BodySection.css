@@ -81,6 +81,7 @@ input[type="submit"] {
 
 #vote-btn:hover {
   color: #26b436;
+  border-color: #26b436;
 }
 
 @media screen and (max-width: 540px) {

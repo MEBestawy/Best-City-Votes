@@ -33,6 +33,7 @@
 }
 #vote-btn:hover {
   color: get($colors, green-col);
+  border-color: get($colors, green-col);
 }
 
 // Small screen

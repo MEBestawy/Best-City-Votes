@@ -4,15 +4,13 @@
   display: none;
 }
 .container {
-  display: flex;
   position: relative;
+  height: fit-content;
   padding-bottom: 5px;
   border-bottom: 3px solid get($colors, red-col);
   cursor: pointer;
 }
-.container > * {
-  align-self: center;
-}
+
 .container,
 .container > *,
 .icon {
@@ -24,6 +22,7 @@
   align-self: flex-end;
 }
 .icon-background {
+  float: left;
   width: 40px;
   height: 40px;
   display: flex;
@@ -45,22 +44,23 @@
   font-size: 1.3em;
 }
 .votes-bar-counter {
+  max-width: inherit;
   position: relative;
+  left: 20px;
   border-radius: 0 50px 50px 0;
   color: get($colors, light);
   font-size: 1.2em;
   box-sizing: border-box;
+  max-width: calc(100% - 20px);
   background-color: get($colors, red-col);
 }
 .votes-bar-counter.show {
   height: 40px;
-  margin-left: -20px;
-  text-align: right;
-  padding: 7px;
-  padding-right: 15px;
 }
 
 .vote-opt-name {
+  float: left;
+  bottom: 10px;
   font-size: 1.8em;
   margin-left: 45px;
   position: absolute;
@@ -72,6 +72,7 @@
 @media screen and (max-width: get($breakPoints, small)) {
   .vote-opt-name {
     font-size: 1.7em;
+    bottom: 9px;
   }
 }
 
@@ -91,16 +92,15 @@
   }
 
   .votes-bar-counter.show {
+    max-width: calc(100% - 30px);
     height: 60px;
-    font-size: 1.5em;
-    padding: 12px;
-    padding-right: 25px;
-    margin-left: -30px;
+    left: 30px;
   }
 
   .vote-opt-name {
+    bottom: 15px;
     font-size: 2.3em;
-    margin-left: 65px;
+    margin-left: 75px;
   }
 }
 
