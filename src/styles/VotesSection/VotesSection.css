@@ -64,9 +64,6 @@ input[type="submit"] {
 
 .options-container {
   width: 100%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
   overflow-y: scroll;
   -ms-overflow-style: none;
   display: -webkit-box;

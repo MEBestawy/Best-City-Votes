@@ -9,7 +9,7 @@ class Option {
   name = "";
   chosen = false;
   docId = null;
-  show = true;
+  shown = true;
 
   constructor(name) {
     this.name = name;
@@ -65,13 +65,12 @@ class BodySection extends React.Component {
               oldOption = opt;
             }
           });
-
           // Is it a new option
-          if (oldOption === null) {
+          if (oldOption == null) {
             voteOptions.push(option);
           } else {
             option.chosen = oldOption.chosen;
-            option.show = oldOption.show;
+            option.shown = oldOption.shown;
             voteOptions[voteOptions.indexOf(oldOption)] = option;
           }
 
@@ -142,9 +141,9 @@ class BodySection extends React.Component {
     const pattern = ".*" + inputVal.toLowerCase().trim() + ".*";
     voteOptions.forEach(option => {
       if (option.name.match(pattern)) {
-        option.show = true;
+        option.shown = true;
       } else {
-        option.show = false;
+        option.shown = false;
       }
     });
     this.setState({ voteOptions });
@@ -152,7 +151,6 @@ class BodySection extends React.Component {
 
   handleAddButtonPress = inputVal => {
     const name = inputVal.toLowerCase().trim();
-    console.log(!name, this.getNames().includes(name));
     if (!name || this.getNames().includes(name)) {
       return this.handleSearchButtonPress(name);
     }

@@ -23,7 +23,6 @@ const VotingOption = props => {
   ) : (
     <FontAwesomeIcon className="icon" icon={faCity} />
   );
-
   return (
     <div
       className={containerClass}

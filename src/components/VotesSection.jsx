@@ -12,7 +12,7 @@ const VotesSection = props => {
       />
       <div className="options-container">
         {props.voteOptions.map((option, index) =>
-          option.show ? (
+          option.shown ? (
             <VotingOption
               voted={props.voted}
               key={index}
