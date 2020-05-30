@@ -1,5 +1,6 @@
 import React from "react";
 import VotesSection from "./VotesSection";
+import LoadingSection from "./LoadingSection";
 import "../styles/BodySection/BodySection.css";
 import firebase from "../firebase/firebase";
 
@@ -166,7 +167,7 @@ class BodySection extends React.Component {
   };
 
   render() {
-    if (this.state.voteOptions.length === 0) return <h1>Loading...</h1>;
+    if (this.state.voteOptions.length === 0) return <LoadingSection />;
     return (
       <div onClick={this.props.onPress} className={"body-section-container"}>
         <div className="title-prompt">What is your favourite city?</div>

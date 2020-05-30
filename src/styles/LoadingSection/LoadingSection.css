@@ -1,0 +1,150 @@
+/* File for importing all available scss imports */
+/* Variables for other scss files */
+/* Shared functions for scss files */
+/* Shared functions for scss files */
+/* Shared styles for webpages */
+/* Variables for other scss files */
+/* Shared functions for scss files */
+/* Shared functions for scss files */
+html,
+body,
+#root {
+  scroll-behavior: smooth;
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f1f8ff), to(#97c7ff));
+  background-image: linear-gradient(#f1f8ff, #97c7ff);
+  overflow-x: hidden;
+}
+
+body > * {
+  font-family: "Helvetica Neue";
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font-family: "Helvetica Neue";
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+button,
+a,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+.loader-background {
+  height: 100%;
+  background: white;
+}
+
+.loader-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.loader-content > * {
+  margin: 0 auto;
+}
+
+#loading-icon {
+  width: 250px;
+  height: 250px;
+}
+
+.loading-logo-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  position: relative;
+  background: #e03c3c;
+}
+
+.rotating-square {
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  background: white;
+  top: 15%;
+  left: 15%;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-animation: spin 10s infinite linear;
+          animation: spin 10s infinite linear;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+#tower-svg-icon {
+  position: absolute;
+  background: no-repeat url(./../../tower.svg);
+  background-size: auto 87%;
+  background-position: center bottom;
+  height: 100%;
+  width: 100%;
+}
+
+#loading-msg {
+  margin-top: 25px;
+  color: #e03c3c;
+  font-size: 2.2em;
+  text-align: left;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+@media screen and (min-width: 830px) {
+  #loading-icon {
+    width: 300px;
+    height: 300px;
+  }
+  #loading-msg {
+    font-size: 2.4em;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  #loading-icon {
+    width: 150px;
+    height: 150px;
+  }
+  #loading-msg {
+    font-size: 1.8em;
+  }
+}
+/*# sourceMappingURL=LoadingSection.css.map */
