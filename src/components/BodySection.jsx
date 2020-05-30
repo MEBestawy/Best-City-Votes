@@ -100,8 +100,6 @@ class BodySection extends React.Component {
   };
 
   handleVote = () => {
-    this.setState({ voted: true });
-
     var chosenOptArr = [];
     this.state.voteOptions.forEach(option => {
       if (option.chosen) {
@@ -118,6 +116,7 @@ class BodySection extends React.Component {
       );
       return;
     }
+
     const chosenOpt = chosenOptArr[0];
     chosenOpt.votes += 1;
     firebase
@@ -135,7 +134,7 @@ class BodySection extends React.Component {
     var maxVotes = this.state.maxVotes;
     maxVotes = Math.max(...this.getVotes());
     this.setWidths(voteOptions, maxVotes);
-    this.setState({ maxVotes, voteOptions });
+    this.setState({ maxVotes, voteOptions, voted: true });
   };
 
   handleSearchButtonPress = inputVal => {
