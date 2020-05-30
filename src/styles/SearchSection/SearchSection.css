@@ -54,10 +54,6 @@ input[type="submit"] {
 
 .search-section-container > * {
   width: 100%;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   margin: 0;
   border-radius: 5px;
   height: 50px;
@@ -77,8 +73,6 @@ input[type="submit"] {
   -ms-grid-column-span: 3;
   grid-area: search-bar;
   padding-left: 15px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 ::-webkit-input-placeholder {

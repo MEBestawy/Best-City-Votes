@@ -9,7 +9,6 @@ $custom-blue: #1863cd;
 }
 .search-section-container > * {
   width: 100%;
-  user-select: none;
   margin: 0;
   border-radius: 5px;
   height: 50px;
@@ -25,8 +24,6 @@ $custom-blue: #1863cd;
 #search-bar {
   grid-area: search-bar;
   padding-left: 15px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 ::placeholder {
   color: $custom-blue;

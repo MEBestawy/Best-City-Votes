@@ -139,7 +139,7 @@ class BodySection extends React.Component {
 
   handleSearchButtonPress = inputVal => {
     var { voteOptions } = this.state;
-    const pattern = ".*" + inputVal.toLowerCase() + ".*";
+    const pattern = ".*" + inputVal.toLowerCase().trim() + ".*";
     voteOptions.forEach(option => {
       if (option.name.match(pattern)) {
         option.show = true;
@@ -151,7 +151,7 @@ class BodySection extends React.Component {
   };
 
   handleAddButtonPress = inputVal => {
-    const name = inputVal.toLowerCase();
+    const name = inputVal.toLowerCase().trim();
     console.log(!name, this.getNames().includes(name));
     if (!name || this.getNames().includes(name)) {
       return this.handleSearchButtonPress(name);
