@@ -8,7 +8,7 @@ class SearchSection extends React.Component {
       <div className="search-section-container">
         <input
           id="search-bar"
-          placeholder="Name of a city..."
+          placeholder="Name a city..."
           onChange={event => this.setState({ inputVal: event.target.value })}
         />
         <button
