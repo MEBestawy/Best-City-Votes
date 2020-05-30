@@ -9,9 +9,10 @@ class Option {
   name = "";
   chosen = false;
   docId = null;
+  show = true;
 
   constructor(name) {
-    this.name = name[0].toUpperCase() + name.substring(1);
+    this.name = name;
   }
 }
 
@@ -23,13 +24,19 @@ class BodySection extends React.Component {
     loading: true
   };
 
-  getVotesArr(options = this.state.voteOptions) {
+  getVotes(options = this.state.voteOptions) {
     var arr = [];
-
     options.forEach(option => {
       arr.push(option.votes);
     });
+    return arr;
+  }
 
+  getNames(options = this.state.voteOptions) {
+    var arr = [];
+    options.forEach(option => {
+      arr.push(option.name);
+    });
     return arr;
   }
 
@@ -37,13 +44,11 @@ class BodySection extends React.Component {
     options.forEach(option => {
       option.width = 100 * (option.votes / maxV);
     });
-    console.log(options);
     this.setState({ voteOptions: options });
   }
 
-  componentDidMount(props) {
-    var { voteOptions } = this.state;
-    var { maxVotes } = this.state;
+  componentDidMount = () => {
+    var { voteOptions, maxVotes } = this.state;
 
     firebase
       .firestore()
@@ -66,16 +71,16 @@ class BodySection extends React.Component {
             voteOptions.push(option);
           } else {
             option.chosen = oldOption.chosen;
+            option.show = oldOption.show;
             voteOptions[voteOptions.indexOf(oldOption)] = option;
           }
 
-          maxVotes = Math.max(...this.getVotesArr(voteOptions));
+          maxVotes = Math.max(...this.getVotes(voteOptions));
           if (this.state.voted) this.setWidths(voteOptions, maxVotes);
         });
-
         this.setState({ voteOptions, maxVotes, loading: false });
       });
-  }
+  };
 
   handlePickOption = name => {
     if (this.props.menuOppened) {
@@ -128,16 +133,43 @@ class BodySection extends React.Component {
     }
 
     var maxVotes = this.state.maxVotes;
-    maxVotes = Math.max(...this.getVotesArr());
+    maxVotes = Math.max(...this.getVotes());
     this.setWidths(voteOptions, maxVotes);
     this.setState({ maxVotes, voteOptions });
   };
 
-  render() {
-    if (this.state.voteOptions.length === 0) {
-      return <h1>Loading...</h1>;
-    }
+  handleSearchButtonPress = inputVal => {
+    var { voteOptions } = this.state;
+    const pattern = ".*" + inputVal.toLowerCase() + ".*";
+    voteOptions.forEach(option => {
+      if (option.name.match(pattern)) {
+        option.show = true;
+      } else {
+        option.show = false;
+      }
+    });
+    this.setState({ voteOptions });
+  };
 
+  handleAddButtonPress = inputVal => {
+    const name = inputVal.toLowerCase();
+    console.log(!name, this.getNames().includes(name));
+    if (!name || this.getNames().includes(name)) {
+      return this.handleSearchButtonPress(name);
+    }
+    // Add to database
+    firebase
+      .firestore()
+      .collection("votes")
+      .doc()
+      .set({ name, votes: 0 })
+      .then(() => {
+        this.handleSearchButtonPress(name);
+      });
+  };
+
+  render() {
+    if (this.state.voteOptions.length === 0) return <h1>Loading...</h1>;
     return (
       <div onClick={this.props.onPress} className={"body-section-container"}>
         <div className="title-prompt">What is your favourite city?</div>
@@ -146,6 +178,8 @@ class BodySection extends React.Component {
           voteOptions={this.state.voteOptions}
           onPick={this.handlePickOption}
           maxVotes={this.state.maxVotes}
+          onSearch={this.handleSearchButtonPress}
+          onAdd={this.handleAddButtonPress}
         />
         <button id="vote-btn" onClick={this.handleVote}>
           Vote

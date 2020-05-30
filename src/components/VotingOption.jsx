@@ -3,6 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCity } from "@fortawesome/free-solid-svg-icons";
 import "../styles/VotingOption/VotingOption.css";
 
+const capFirst = name => {
+  if (!name) return "";
+  return name[0].toUpperCase() + name.substring(1);
+};
+
 const VotingOption = props => {
   var containerClass = "container ";
   containerClass += props.option.chosen ? "chosen-opt" : "";
@@ -32,7 +37,7 @@ const VotingOption = props => {
         style={{ width: props.option.width + "%" }}
       />
 
-      <div className={optionNameClasses}>{props.option.name}</div>
+      <div className={optionNameClasses}>{capFirst(props.option.name)}</div>
     </div>
   );
 };
