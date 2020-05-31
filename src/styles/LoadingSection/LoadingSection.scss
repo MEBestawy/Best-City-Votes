@@ -1,7 +1,8 @@
 @import "../Utilities/Utilities";
 
-.loader-background {
-  height: 100%;
+html,
+body,
+#root {
   background: get($colors, light);
 }
 

@@ -14,8 +14,6 @@ body,
   height: 100%;
   width: 100%;
   position: absolute;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f1f8ff), to(#97c7ff));
-  background-image: linear-gradient(#f1f8ff, #97c7ff);
   overflow-x: hidden;
 }
 
@@ -80,12 +78,15 @@ input[type="submit"] {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   margin: 20px auto;
-  margin-bottom: 0;
+  margin-bottom: 80px;
+  position: relative;
   font-size: 1.2em;
   padding: 10px 25px;
   background-color: white;
   color: #217fff;
   border: 2px solid #217fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .menu-promo-button:hover {
@@ -100,6 +101,9 @@ input[type="submit"] {
   .drawer-container {
     padding: 35px 30px;
   }
+  .menu-promo-button {
+    margin-bottom: 55px;
+  }
   .menu-text > * {
     font-size: 1.2em;
     line-height: 1.2em;
@@ -111,8 +115,15 @@ input[type="submit"] {
     width: 85%;
     padding: 35px 20px;
   }
+  .menu-promo-button {
+    margin-bottom: 55px;
+  }
   .menu-text > * {
     font-size: 1.1em;
   }
+}
+
+.drawer-container {
+  padding-bottom: 0;
 }
 /*# sourceMappingURL=SideDrawer.css.map */

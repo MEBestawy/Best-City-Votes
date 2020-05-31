@@ -31,12 +31,14 @@
 .menu-promo-button {
   transition: 0.3s;
   margin: 20px auto;
-  margin-bottom: 0;
+  margin-bottom: 80px;
+  position: relative;
   font-size: 1.2em;
   padding: 10px 25px;
   background-color: get($colors, light);
   color: get($colors, blue-col);
   border: 2px solid get($colors, blue-col);
+  box-sizing: border-box;
 }
 .menu-promo-button:hover {
   background-color: get($colors, blue-col);
@@ -51,9 +53,11 @@
     padding: 35px 30px;
   }
 
+  .menu-promo-button {
+    margin-bottom: 55px;
+  }
   .menu-text > * {
     font-size: 1.2em;
-
     line-height: 1.2em;
   }
 }
@@ -64,7 +68,16 @@
     width: 85%;
     padding: 35px 20px;
   }
+
+  .menu-promo-button {
+    margin-bottom: 55px;
+  }
+
   .menu-text > * {
     font-size: 1.1em;
   }
+}
+
+.drawer-container {
+  padding-bottom: 0;
 }

@@ -6,6 +6,8 @@
   margin: auto;
   padding: 50px 20px;
   box-sizing: border-box;
+
+  background-image: linear-gradient(#f1f8ff, #97c7ff);
 }
 
 .title-prompt {
@@ -15,12 +17,11 @@
 }
 
 #vote-btn {
-  position: absolute;
   font-size: 1.4em;
   padding: 10px 8px;
   margin: 30px 0;
-  margin-bottom: 50px;
-  left: 50%;
+  margin-left: 50%;
+  margin-bottom: 0;
   width: 30%;
   min-width: 120px;
   max-width: 400px;
