@@ -1,13 +1,23 @@
 @import "../Utilities/Utilities";
 
+.page-background {
+  height: fit-content;
+  min-height: 100%;
+}
+
+#load-back {
+  background: get($colors, light);
+}
+#body-back {
+  background-image: linear-gradient(#f1f8ff, #97c7ff);
+}
+
 .body-section-container {
   width: 100%;
   max-width: 1200px;
   margin: auto;
   padding: 50px 20px;
   box-sizing: border-box;
-
-  background-image: linear-gradient(#f1f8ff, #97c7ff);
 }
 
 .title-prompt {

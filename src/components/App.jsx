@@ -30,10 +30,7 @@ class App extends React.Component {
           onPress={this.handleBlurPress}
           menuOpenned={this.state.menuOpened}
         />
-        <BodySection
-          onPress={this.handleBodySectionPress}
-          menuOppened={this.state.menuOpened}
-        />
+        <BodySection menuOppened={this.state.menuOpened} />
       </React.Fragment>
     );
   }

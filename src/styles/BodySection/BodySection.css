@@ -42,6 +42,22 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+.page-background {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 100%;
+}
+
+#load-back {
+  background: white;
+}
+
+#body-back {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f1f8ff), to(#97c7ff));
+  background-image: linear-gradient(#f1f8ff, #97c7ff);
+}
+
 .body-section-container {
   width: 100%;
   max-width: 1200px;
@@ -49,8 +65,6 @@ input[type="submit"] {
   padding: 50px 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f1f8ff), to(#97c7ff));
-  background-image: linear-gradient(#f1f8ff, #97c7ff);
 }
 
 .title-prompt {

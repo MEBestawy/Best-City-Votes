@@ -167,21 +167,28 @@ class BodySection extends React.Component {
   };
 
   render() {
-    if (this.state.voteOptions.length === 0) return <LoadingSection />;
+    if (this.state.voteOptions.length === 0)
+      return (
+        <div className="page-background" id="load-back">
+          <LoadingSection />
+        </div>
+      );
     return (
-      <div onClick={this.props.onPress} className={"body-section-container"}>
-        <div className="title-prompt">What is your favourite city?</div>
-        <VotesSection
-          voted={this.state.voted}
-          voteOptions={this.state.voteOptions}
-          onPick={this.handlePickOption}
-          maxVotes={this.state.maxVotes}
-          onSearch={this.handleSearchButtonPress}
-          onAdd={this.handleAddButtonPress}
-        />
-        <button id="vote-btn" onClick={this.handleVote}>
-          Vote
-        </button>
+      <div className="page-background" id="body-back">
+        <div className={"body-section-container"}>
+          <div className="title-prompt">What is your favourite city?</div>
+          <VotesSection
+            voted={this.state.voted}
+            voteOptions={this.state.voteOptions}
+            onPick={this.handlePickOption}
+            maxVotes={this.state.maxVotes}
+            onSearch={this.handleSearchButtonPress}
+            onAdd={this.handleAddButtonPress}
+          />
+          <button id="vote-btn" onClick={this.handleVote}>
+            Vote
+          </button>
+        </div>
       </div>
     );
   }
