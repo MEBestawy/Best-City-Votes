@@ -1,68 +1,14 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About
+Best City Vote is a web-app that aims to collet data from web users about their favourite cities in the form of a survey. Users get to search for their city of choice, or create a new entry if their favourite city can not be found. After voting, users can then see how their choice stacks up in popularity to other cities through a bar graph showing all the cities and their respective vote counts.
 
-## Available Scripts
+## Learning Experience
+The purpose for building this web-app was to gain web-development experience. In the implementation of this website I had to overcome many obstacles that ultimately expanded my knowledge.
 
-In the project directory, you can run:
+One such obstacle was determining how to save the vote counts for each city, or how to allow users to add their own choices to the database. These questions propelled me to learn more about HTTP requests, servers, databases, RESTful API, and ultimately led to my discovery of the Firebase platform.
 
-### `npm start`
+Another obstacle came in the form of the front-end development of the web-app. Thought the UI is very simple, I did not feel satisfied only using regular HTML, CSS, and vanilla JS. To build on my continued effort to grow as a developer, I decided to implement the UI using the ReactJS library. By doing so I earned experience with event handling and propagation, managing component states, as well as effectively using props.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Potential Next Steps
+A current problem with the web-app is the lack of proper locking mechanism to prevent users who have already voted to vote again. This allows any user to vote for multiple cities, or for the same city multiple times. One potential solution to this would be to use cookies to identify which devices have already votes and which did not. Though viable, this solution is not immune to fraud as users could potentially bypass this solution by clearing their cookies.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Another issue rises with from giving users the ability to add their own cities. This calls for some measure to insure that users are adding real cities with no typos. Such a solution could involve using Google Maps API to confirm that the added city exists. To take this idea further, a later iteration of this solution can include completely getting rid of stored city names and using external API for users to select their desired cities.
